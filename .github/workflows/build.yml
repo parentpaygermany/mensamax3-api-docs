@@ -14,7 +14,7 @@ jobs:
         run: docker compose up -d
 
       - name: Activate Middleman
-        run: docker-compose exec docs bundle exec middleman build
+        run: docker compose exec docs bundle exec middleman build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
