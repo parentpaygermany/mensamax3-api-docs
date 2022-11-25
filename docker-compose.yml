@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  docs:
+    image: elchbenny/docker-slate
+    ports:
+      - 4002:4567
+    volumes:
+      - ./source/index.html.md:/slate/slate-2.0.0/source/index.html.md
+      - ./source/images/logo.png:/slate/slate-2.0.0/source/images/logo.png
+      - ./docs:/slate/slate-2.0.0/build

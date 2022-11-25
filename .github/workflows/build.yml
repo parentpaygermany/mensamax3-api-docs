@@ -1,0 +1,22 @@
+name: Build and Publish new Docs
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  BuildAndPublish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Docker Compose up
+        run: docker compose up -d
+
+      - name: Activate Middleman
+        run: docker-compose exec docs bundle exec middleman build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs # The folder the action should deploy.

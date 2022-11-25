@@ -1,0 +1,3404 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>MensaMax API-Dokumentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;json--request&quot;,&quot;json--response&quot;,&quot;html&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="json--request">JSON Body-Anfrage</a>
+              <a href="#" data-language-name="json--response">JSON Body-Antwort</a>
+              <a href="#" data-language-name="html">HTTP-Statuscode</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#mensamax-api" class="toc-h1 toc-link" data-title="MensaMax API">MensaMax API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#dokumentation-version-3-22-0811-01" class="toc-h2 toc-link" data-title="MensaMax API">Dokumentation Version 3.22.0811.01</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentifizierung" class="toc-h1 toc-link" data-title="Authentifizierung">Authentifizierung</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#erstellung-eines-api-keys" class="toc-h2 toc-link" data-title="Authentifizierung">Erstellung eines API-Keys</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-status" class="toc-h1 toc-link" data-title="API Status">API Status</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-zustand" class="toc-h2 toc-link" data-title="API Status">API Zustand</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#wochenspeiseplan" class="toc-h1 toc-link" data-title="Wochenspeiseplan">Wochenspeiseplan</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#wochenspeiseplane-abrufen" class="toc-h2 toc-link" data-title="Wochenspeiseplan">Wochenspeisepläne abrufen</a>
+                  </li>
+                  <li>
+                    <a href="#wochenspeiseplan-setzen" class="toc-h2 toc-link" data-title="Wochenspeiseplan">Wochenspeiseplan setzen</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#bestellzahlen" class="toc-h1 toc-link" data-title="Bestellzahlen">Bestellzahlen</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#bestellzahlen-abrufen" class="toc-h2 toc-link" data-title="Bestellzahlen">Bestellzahlen abrufen</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#person" class="toc-h1 toc-link" data-title="Person">Person</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#person-erstellen" class="toc-h2 toc-link" data-title="Person">Person erstellen</a>
+                  </li>
+                  <li>
+                    <a href="#person-suchen" class="toc-h2 toc-link" data-title="Person">Person suchen</a>
+                  </li>
+                  <li>
+                    <a href="#person-andern" class="toc-h2 toc-link" data-title="Person">Person ändern</a>
+                  </li>
+                  <li>
+                    <a href="#person-inaktiv-setzen" class="toc-h2 toc-link" data-title="Person">Person inaktiv setzen</a>
+                  </li>
+                  <li>
+                    <a href="#person-aktiv-setzen" class="toc-h2 toc-link" data-title="Person">Person aktiv setzen</a>
+                  </li>
+                  <li>
+                    <a href="#person-loschen" class="toc-h2 toc-link" data-title="Person">Person löschen</a>
+                  </li>
+                  <li>
+                    <a href="#ein-bild-zu-einer-person-hochladen" class="toc-h2 toc-link" data-title="Person">Ein Bild zu einer Person hochladen</a>
+                  </li>
+                  <li>
+                    <a href="#personenbestellungen" class="toc-h2 toc-link" data-title="Person">Personenbestellungen</a>
+                  </li>
+                  <li>
+                    <a href="#personen-ohne-bestellung" class="toc-h2 toc-link" data-title="Person">Personen ohne Bestellung</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#klassenstufe" class="toc-h1 toc-link" data-title="Klassenstufe">Klassenstufe</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#klassenstufe-erstellen" class="toc-h2 toc-link" data-title="Klassenstufe">Klassenstufe erstellen</a>
+                  </li>
+                  <li>
+                    <a href="#klassenstufen-abrufen" class="toc-h2 toc-link" data-title="Klassenstufe">Klassenstufen abrufen</a>
+                  </li>
+                  <li>
+                    <a href="#klassenstufe-andern" class="toc-h2 toc-link" data-title="Klassenstufe">Klassenstufe ändern</a>
+                  </li>
+                  <li>
+                    <a href="#klassenstufe-loschen" class="toc-h2 toc-link" data-title="Klassenstufe">Klassenstufe löschen</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#klasse-2" class="toc-h1 toc-link" data-title="Klasse">Klasse</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#klasse-erstellen" class="toc-h2 toc-link" data-title="Klasse">Klasse erstellen</a>
+                  </li>
+                  <li>
+                    <a href="#klassen-abrufen" class="toc-h2 toc-link" data-title="Klasse">Klassen abrufen</a>
+                  </li>
+                  <li>
+                    <a href="#klasse-andern" class="toc-h2 toc-link" data-title="Klasse">Klasse ändern</a>
+                  </li>
+                  <li>
+                    <a href="#klasse-loschen" class="toc-h2 toc-link" data-title="Klasse">Klasse löschen</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#identifikationsmedium" class="toc-h1 toc-link" data-title="Identifikationsmedium">Identifikationsmedium</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#zuweisen" class="toc-h2 toc-link" data-title="Identifikationsmedium">Zuweisen</a>
+                  </li>
+                  <li>
+                    <a href="#zuruckgeben" class="toc-h2 toc-link" data-title="Identifikationsmedium">Zurückgeben</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#server-fehler-antworten" class="toc-h1 toc-link" data-title="Server Fehler Antworten">Server Fehler Antworten</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://mensamax.de'>MensaMax</a></li>
+            <li><style>.toc-wrapper .logo { padding: 20px; margin-left: auto; margin-right: auto; } .http-status-code { padding: 5px; background-color: white; }</style></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='mensamax-api'>MensaMax API</h1><h3 id='dokumentation-version-3-22-0811-01'>Dokumentation Version 3.22.0811.01</h3>
+<p>Herzlich willkommen zur MensaMax-API. Mithilfe dieser Schnittstelle können folgende Daten abgerufen oder Aktionen ausgeführt werden:</p>
+
+<ul>
+<li>Abrufen von Wochenspeiseplänen für einen gewissen Zeitraum</li>
+<li>Setzen des Wochenspeiseplans für eine Woche</li>
+<li>Abrufen der Bestellzahlen von Menüs für ein Datum oder einen Zeitraum</li>
+<li>Erstellen, Suchen, Löschen und Inaktivsetzen von Personen</li>
+<li>Abrufen, Erstellen, Ändern und Löschen von Klassensufen und Klassen</li>
+<li>Zuweisen und Zurückgeben von Identifikationsmedien</li>
+</ul>
+<h1 id='authentifizierung'>Authentifizierung</h1>
+<p>MensaMax verwendet API-Keys, um den Zugriff auf die API zu gewähren. Im Folgenden ist beschrieben, wie ein API-Key zur Authentifizierung genutzt, erstellt und wiederrufen werden kann.</p>
+
+<p>MensaMax erwartet, dass der API-Key in allen Anfragen an den Server in einem Header mitgesendet wird:</p>
+
+<p><code>Authorization: Bearer [API-KEY]</code></p>
+
+<aside class="notice">
+Der Platzhalter <code>[API-KEY]</code> muss mit dem persönlichen API-Key ersetzt werden.
+
+Alle Projekt spezifischen Werte sind in dieser Dokumentation <code>[zwischen eckigen Klammern]</code> dargestellt. Diese Werte dienen als Platzhalter und müssen entsprechend ersetzt werden.
+</aside>
+
+<aside class="warning">
+cURL Anfragen werden ohne Zeilenümbrüche ausgeführt. Es gibt Sonderzeichen um Zeilenumbrüche in Shells zu erzwingen. Diese sind allerdings Shell abhängig. In dieser Dokumentation sind die cURL Beispiele zur besseren Übersichtlichkeit mit Zeilenumbrüchen dargestellt.
+</aside>
+<h2 id='erstellung-eines-api-keys'>Erstellung eines API-Keys</h2>
+<p>Der API-Key sollte immer an einem sicheren Ort aufbewahrt werden. Der API-Key verliert nach 30 Minuten seine Gültigkeit und muss neu angefragt werden.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/createToken"</span>
+  --request POST
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'{"projekt":"[PROJEKT]","einrichtung":"[EINRICHTUNG]","benutzername":"[BENUTZERNAME]","passwort":"[PASSWORT]"}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"projekt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[PROJEKT]"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"einrichtung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[EINRICHTUNG]"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"benutzername"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[BENUTZERNAME]"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"passwort"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[PASSWORT]"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 ... yMnzUs5mqLRbv0_k1HgsVQ95tinByUw1ktFn7nm_T4I"</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/createToken</code></p>
+<h3 id='body-parameter'>Body-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>projekt</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Name des Projekts.</td>
+</tr>
+<tr>
+<td>einrichtung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Einrichtung des Nutzers.</td>
+</tr>
+<tr>
+<td>benutzername</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Benutzername eines Nutzers, der zur API-Nutzung berechtigt ist.</td>
+</tr>
+<tr>
+<td>passwort</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Passwort des Benutzers.</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td>string</td>
+<td>API-Key</td>
+</tr>
+</tbody></table>
+<h1 id='api-status'>API Status</h1><h2 id='api-zustand'>API Zustand</h2>
+<p>Diese Anfrage gibt den Zustand und die Version der API zurück. So kann sicher gestellt werden, dass die API bereit für Anfragen ist.</p>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="s2">"https://[SERVER]/api/health"</span>
+</code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-20T14:34:16.8782331+02:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.22.1904.1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-2'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/health</code></p>
+<h3 id='body-antwort-2'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date</td>
+<td>string</td>
+<td>Aktueller Zeitpunkt der Anfrage.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>Version der API.</td>
+</tr>
+</tbody></table>
+<h1 id='wochenspeiseplan'>Wochenspeiseplan</h1><h2 id='wochenspeiseplane-abrufen'>Wochenspeisepläne abrufen</h2>
+<p>Dieser Endpunkt liefert eine Liste an Wochenspeiseplänen für den angegebenen Zeitraum. Wird das Bis-Datum nicht gesetzt, enthält die Liste nur einen Wochenspeiseplan des Von-Datums.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/wochenspeiseplan?mandantName=[MANDANTNAME]&amp;von=[VON]&amp;bis=[BIS]"</span>
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight json tab-json--response"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"textOben"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"textUnten"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Täglich Abwechslung vom frischen Salat-Buffet mit Knabbergemüse (Möhren, Kohlrabi, Gurke) und Blattsalaten (Eisbergsalat, Lollo Rosso) mit wechselndem Dressing und Dip "</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"startDatum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-12T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"endDatum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-18T23:59:59"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tagesspeiseplaene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"datum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-12T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"positionen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"menuegruppe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menü 1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"menue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"externeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"speisen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cevapcici (Geflügelhackröllchen)"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"piktogramm"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eier und Eierzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senf oder Senferzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">],</span><span class="w">
+                  </span><span class="s2">"naehrwerte"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brennwert"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"menge"</span><span class="p">:</span><span class="w"> </span><span class="mi">143</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"einheit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kJ"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"bezugsmenge"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"bezugseinheit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"g"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fett"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"menge"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.7</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"einheit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"g"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"bezugsmenge"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"bezugseinheit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"g"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tzatziki"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">],</span><span class="w">
+                  </span><span class="s2">"naehrwerte"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brennwert"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"menge"</span><span class="p">:</span><span class="w"> </span><span class="mi">143</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"einheit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kJ"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"bezugsmenge"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"bezugseinheit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"g"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fett"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"menge"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.7</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"einheit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"g"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"bezugsmenge"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"bezugseinheit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"g"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Röstkartoffeln"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"naehrwerte"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"mahlzeit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"menuegruppe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menü 2"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"menue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"externeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"speisen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ravioli mit Käsefüllung in bunter Rahmsoße (Möhren, Sellerie, Lauch)"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mit Antioxidationsmitteln"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eier und Eierzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">],</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"piktogramm"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"mahlzeit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"menuegruppe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nachtisch"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"menue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"externeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"speisen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Griesbrei"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"piktogramm"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"mahlzeit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"zusatztext"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Täglicher Zusatztext"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"datum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-13T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"positionen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"menuegruppe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menü 1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"menue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"externeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"speisen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cevapcici (Geflügelhackröllchen)"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eier und Eierzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senf oder Senferzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tzatziki"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Röstkartoffeln"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Griesbrei"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"mahlzeit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"menuegruppe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menü 2"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"menue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"externeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"speisen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ravioli mit Käsefüllung"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mit Antioxidationsmitteln"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eier und Eierzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">],</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bunte Rahmsoße (Möhren, Sellerie, Lauch)"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sellerie oder Sellerieerzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Griesbrei"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"mahlzeit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"zusatztext"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Täglicher Zusatztext"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"datum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-14T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"positionen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"menuegruppe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menü 1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"menue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"externeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"speisen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cevapcici (Geflügelhackröllchen) mit Tzatziki und Röstkartoffeln"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eier und Eierzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senf oder Senferzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Griesbrei"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"mahlzeit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"menuegruppe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menü 2"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"menue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"externeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"speisen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ravioli mit Käsefüllung in bunter Rahmsoße (Möhren, Sellerie, Lauch)"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"zusatzstoffe"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mit Antioxidationsmitteln"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">],</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eier und Eierzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sellerie oder Sellerieerzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">],</span><span class="w">
+                  </span><span class="s2">"naehrwerte"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Griesbrei"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"vegetarisch"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"menuefolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"allergene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glutenhaltiges Getreide Weizen"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milch oder Milcherzeugnisse"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"kennung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"mahlzeit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"zusatztext"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Täglicher Zusatztext"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-3'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/wochenspeiseplan?mandantName=[MANDANTNAME]&amp;von=[VON]&amp;bis=[BIS]</code></p>
+<h3 id='query-parameter'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>von</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Datum, ab dem Wochenspeisepläne abgerufen werden sollen.</td>
+</tr>
+<tr>
+<td>bis</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Datum, bis zu dem Wochenspeisepläne abgerufen werden sollen.</td>
+</tr>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Mandantname für dessen Mandantenverbund der Wochenspeiseplan abgerufen werden soll.</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort-3'>Body-Antwort</h3>
+<p>array of <a href="#wochenspeiseplan-2">Wochenspeiseplan</a></p>
+<h3 id='wochenspeiseplan-2'>Wochenspeiseplan</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>textOben</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Text, der oberhalb des Speiseplans angezeigt wird.</td>
+</tr>
+<tr>
+<td>textUnten</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Text, der unterhalb des Speiseplans angezeigt wird.</td>
+</tr>
+<tr>
+<td>startDatum</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Datum des ersten Tages in der Woche.</td>
+</tr>
+<tr>
+<td>endDatum</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Datum des letzten Tages in der Woche.</td>
+</tr>
+<tr>
+<td>tagesspeiseplaene</td>
+<td style="text-align: center">&#x2611;</td>
+<td>array of <a href="#tagesspeiseplan">Tagesspeiseplan</a></td>
+<td>Liste an Tagesspeiseplänen.</td>
+</tr>
+</tbody></table>
+<h3 id='tagesspeiseplan'>Tagesspeiseplan</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datum</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Datum des Wochentags.</td>
+</tr>
+<tr>
+<td>positionen</td>
+<td style="text-align: center">&#x2611;</td>
+<td>array of <a href="#tagesspeiseplanposition">Tagesspeiseplanposition</a></td>
+<td>Liste der Tagesspeiseplanpositionen.</td>
+</tr>
+<tr>
+<td>zusatztext</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Täglicher Zusatztext.</td>
+</tr>
+</tbody></table>
+<h3 id='tagesspeiseplanposition'>Tagesspeiseplanposition</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>menuegruppe</td>
+<td style="text-align: center">&#x2611;</td>
+<td><a href="#menuegruppe">Menuegruppe</a></td>
+<td>Menügruppe der Tagesspeiseplanposition.</td>
+</tr>
+<tr>
+<td>menue</td>
+<td style="text-align: center">&#x2611;</td>
+<td><a href="#menue">Menue</a></td>
+<td>Menü der Tagesspeiseplanpostition.</td>
+</tr>
+<tr>
+<td>mahlzeit</td>
+<td style="text-align: center"></td>
+<td><a href="#mahlzeit">Mahlzeit</a></td>
+<td>Mahlzeit der Tagesspeiseplanpostion.</td>
+</tr>
+</tbody></table>
+<h3 id='menuegruppe'>Menuegruppe</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Name der Menügruppe. Darüber wird die Menügruppe eindeutig identifiziert.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Die Menügruppe kann nicht neu gesetzt werden und wird über die Bezeichnung abgeglichen.
+</aside>
+<h3 id='menue'>Menue</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>externeId</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Externe ID des Menüs.</td>
+</tr>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung des Menüs (aktuell immer null und wird beim setzen ignoriert, kann aber in der Zukunft evtl. gesetzt werden).</td>
+</tr>
+<tr>
+<td>speisen</td>
+<td style="text-align: center">&#x2611;</td>
+<td>array of <a href="#speise">Speise</a></td>
+<td>Liste von Speisen des Menüs.</td>
+</tr>
+<tr>
+<td>zusatzstoffe</td>
+<td style="text-align: center"></td>
+<td>array of <a href="#zusatzstoff">Zusatzstoff</a></td>
+<td>Liste von Zusatzstoffen eines Menüs. Diese werden anhand der in den Speisen angegebenen Zusatzstoffen zusammengestellt und können <strong>nicht</strong> extra gesetzt werden.</td>
+</tr>
+<tr>
+<td>allergene</td>
+<td style="text-align: center"></td>
+<td>array of <a href="#allergen">Allergen</a></td>
+<td>Liste von Allergenen eines Menüs. Diese werden anhand der in den Speisen angegebenen Allergenen zusammengestellt und können <strong>nicht</strong> extra gesetzt werden.</td>
+</tr>
+</tbody></table>
+<h3 id='mahlzeit'>Mahlzeit</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung der Mahlzeit (Frühstück, Mittagessen, ...)</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Mahlzeit ist aktuell immer NULL, kann aber in der Zukunft evtl. gesetzt werden.
+</aside>
+<h3 id='speise'>Speise</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung der Speise, anhand derer die Identifikation erfolgt.</td>
+</tr>
+<tr>
+<td>zusatzstoffe</td>
+<td style="text-align: center"></td>
+<td>array of <a href="#zusatzstoff">Zusatzstoff</a></td>
+<td>Liste von Zusatzstoffen.</td>
+</tr>
+<tr>
+<td>allergene</td>
+<td style="text-align: center"></td>
+<td>array of <a href="#allergen">Allergen</a></td>
+<td>Liste von Allergenen.</td>
+</tr>
+<tr>
+<td>naehrwert</td>
+<td style="text-align: center"></td>
+<td>array of <a href="#naehrwert">Naehrwert</a></td>
+<td>Liste von Nährwerten.</td>
+</tr>
+<tr>
+<td>vegetarisch</td>
+<td style="text-align: center"></td>
+<td>boolean</td>
+<td>True = vergetarisch, false = nicht vegetarisch.</td>
+</tr>
+<tr>
+<td>menuefolge</td>
+<td style="text-align: center"></td>
+<td>number</td>
+<td>Menüfolge (0 .. 2) Standardwert: Hauptspeise.</td>
+</tr>
+<tr>
+<td>piktogramm</td>
+<td style="text-align: center"></td>
+<td>number</td>
+<td>Piktogramm der Speise (1 .. 12).</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Menüfolgen:
+  <ol start="0">
+    <li>Vorspeise</li>
+    <li>Hauptspeise</li>
+    <li>Nachspeise</li>
+  </ol>
+</aside>
+
+<aside class="notice">
+Auswahl Piktogramme:
+  <ol>
+    <li>Aehre</li>
+    <li>DGE</li>
+    <li>Essen</li>
+    <li>Fisch</li>
+    <li>Gemüse</li>
+    <li>Huhn</li>
+    <li>Rind</li>
+    <li>Pastateller</li>
+    <li>Salat</li>
+    <li>Schaf</li>
+    <li>Schwein</li>
+    <li>Suppenteller</li>
+  </ol>
+</aside>
+<h3 id='zusatzstoff'>Zusatzstoff</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung des Zusatzstoffs, anhand derer die Identifikation erfolgt.</td>
+</tr>
+<tr>
+<td>kennung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Kennung des Zusatzstoffes.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Ein Zusatzstoff wird durch die Bezeichnung und Kennung identifiziert. Wenn es keinen Zusatzstoff mit dieser Bezeichnung und Kennung gibt, dann wird die Kennung überprüft. Wenn es diese Kennung mit einer anderen Bezeichnung noch nicht gibt, wird der Zusatzstoff neu angelegt.
+</aside>
+<h3 id='allergen'>Allergen</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung des Allergens, anhand derer die Identifikation erfolgt.</td>
+</tr>
+<tr>
+<td>kennung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Kennung des Allergens.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Ein Allergen wird durch die Bezeichnung und Kennung identifiziert. Wenn es kein Allergen mit dieser Bezeichnung und Kennung gibt, dann wird die Kennung überprüft. Wenn es diese Kennung mit einer anderen Bezeichnung noch nicht gibt, wird das Allergen neu angelegt.
+Zusatzstoffe und Allergene mit der selben Kennung sind nicht zulässig.
+</aside>
+<h3 id='naehrwert'>Naehrwert</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung des Nährwerts, anhand derer abgeglichen wird.</td>
+</tr>
+<tr>
+<td>menge</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>Menge des Nährwerts (z.B. 13 bei 13g Kohlenhydrate pro 1kg).</td>
+</tr>
+<tr>
+<td>einheit</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Einheit des Nährwerts (z.B. g bei 13g Kohlenhydrate pro 1kg).</td>
+</tr>
+<tr>
+<td>bezugsmenge</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>Bezugsmenge (z.B. 1 bei 13g Kohlenhydrate pro 1kg).</td>
+</tr>
+<tr>
+<td>bezugseinheit</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezugseinheit (z.B. kg bei 13g Kohlenhydrate pro 1kg).</td>
+</tr>
+</tbody></table>
+<h2 id='wochenspeiseplan-setzen'>Wochenspeiseplan setzen</h2>
+<p>Dieser Endpunkt setzt den Wochenspeiseplan für die Woche, die im übergebenen Wochenspeiseplan enthalten ist. Der Wochenspeiseplan wird für die Mandantengruppe gesetzt, in dem der angegebene Mandant enthalten ist.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/wochenspeiseplan"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'{"textOben": "An apple a day keeps the doctor away", ...}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"textOben"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An apple a day keeps the doctor away."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"textUnten"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"startDatum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-18T00:00:00+01:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"endDatum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-22T00:00:00+01:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tagesspeiseplaene"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="s2">"Wochenspeiseplan der Kalenderwoche von 18.04.2022 bis 22.04.2022 ist erfolgreich in Projekt in MensaMax hinterlegt."</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-4'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/wochenspeiseplan?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-2'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Mandantname, für dessen Mandantenverbund der Wochenspeiseplan gesetzt werden soll.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameter-2'>Body-Parameter</h3>
+<p>Im Body muss der <strong><a href="#wochenspeiseplan-2">Wochenspeiseplan</a></strong> gesetzt werden.</p>
+<h3 id='body-antwort-4'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td>string</td>
+<td>Status der Anfrage.</td>
+</tr>
+</tbody></table>
+<h1 id='bestellzahlen'>Bestellzahlen</h1><h2 id='bestellzahlen-abrufen'>Bestellzahlen abrufen</h2>
+<p>Dieser Endpunkt liefert die Menü-Bestellzahlen für den angegebenen Zeitraum. Wird das Bis-Datum nicht angegeben, enthält die Liste nur die Bestellzahlen für das Von-Datum.
+Es können die Bestellzahlen für maximal eine Woche abgerufen werden.</p>
+
+<aside class="notice">
+Die Bezeichnungen für Ausgabeschichten, -orte und Zubereitungsmerkmale können von den Kunden selbst gesetzt werden und können daher ungewöhnliche Bezeichnungen enthalten. Ausgabeorte und Ausgabeschichten enhalten nun IDs.
+</aside>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/bestellzahlen?von=[VON]&amp;bis=[BIS]"</span>
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight json tab-json--response"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"datum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-01T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mandanten"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grundschule"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"menuegruppen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vollwertkost"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"menues"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speisenamen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Rinder-Schmorfleisch"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Buntes Gemüse"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Kartoffelspalten"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Blattsalate"</span><span class="p">],</span><span class="w">
+                </span><span class="s2">"ausgabeorte"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ausgabeschichten"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                      </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab 12.45 Uhr"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"zubereitungsmerkmale"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nuss-Allergie"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                          </span><span class="p">},</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Passiert"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                      </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speisenamen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Tomatencremesuppe"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Milchreis mit Apfelmus"</span><span class="p">],</span><span class="w">
+                </span><span class="s2">"ausgabeorte"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ausgabeschichten"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                      </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab 12.45 Uhr"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"zubereitungsmerkmale"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                      </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"final"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vegetarisch"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"menues"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speisenamen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Rinder-Schmorfleisch"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Buntes Gemüse"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Kartoffelspalten"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Blattsalate"</span><span class="p">],</span><span class="w">
+                </span><span class="s2">"ausgabeorte"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ausgabeschichten"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                      </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab 12.45 Uhr"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"zubereitungsmerkmale"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nuss-Allergie"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                          </span><span class="p">},</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Passiert"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                      </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speisenamen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Tomatencremesuppe"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Milchreis mit Apfelmus"</span><span class="p">],</span><span class="w">
+                </span><span class="s2">"ausgabeorte"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ausgabeschichten"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                      </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab 12.45 Uhr"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"zubereitungsmerkmale"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                      </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"final"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Realschule"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"menuegruppen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vollwertkost"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"menues"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">405</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speisenamen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Rinder-Schmorfleisch"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Buntes Gemüse"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Kartoffelspalten"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Blattsalate"</span><span class="p">],</span><span class="w">
+                </span><span class="s2">"ausgabeorte"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">405</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"ausgabeschichten"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                      </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab 12.00 Uhr"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"zubereitungsmerkmale"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Koscher/Halāl"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+                          </span><span class="p">},</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nuss-Allergie, Koscher/Halāl"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                      </span><span class="p">},</span><span class="w">
+                      </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab 12.45 Uhr"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">291</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"zubereitungsmerkmale"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Koscher/Halāl"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+                          </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                      </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"final"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"datum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-02T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mandanten"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grundschule"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"menuegruppen"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Realschule"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"menuegruppen"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-5'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/bestellzahlen?von=[VON]&amp;bis=[BIS]</code></p>
+<h3 id='query-parameter-3'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>von</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Format &#39;2099-01-31&#39;</td>
+</tr>
+<tr>
+<td>bis</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Format &#39;2099-12-31&#39;</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort-5'>Body-Antwort</h3>
+<p>array of <a href="#bestellzahlen-2">Bestellzahlen</a></p>
+<h3 id='bestellzahlen-2'>Bestellzahlen</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datum</td>
+<td>string</td>
+<td>Datum der Tagesbestellzahlen.</td>
+</tr>
+<tr>
+<td>mandanten</td>
+<td>array of <a href="#mandant">Mandant</a></td>
+<td>Liste an Mandanten und aller Bestellungen.</td>
+</tr>
+</tbody></table>
+<h3 id='mandant'>Mandant</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Name der Einrichtung.</td>
+</tr>
+<tr>
+<td>menuegruppen</td>
+<td>array of <a href="#menuegruppe-2">Menuegruppe</a></td>
+<td>Menuegruppen, die bestellt wurden.</td>
+</tr>
+</tbody></table>
+<h3 id='menuegruppe-2'>Menuegruppe</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Bezeichnung der Menuegruppe.</td>
+</tr>
+<tr>
+<td>menues</td>
+<td>array of <a href="#menue-2">Menue</a></td>
+<td>Menüs einer Menügruppe, die bestellt wurden.</td>
+</tr>
+<tr>
+<td>final</td>
+<td>boolean</td>
+<td>Gibt an, ob die Bestellzahlen final sind.</td>
+</tr>
+</tbody></table>
+<h3 id='menue-2'>Menue</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exterenId</td>
+<td>string</td>
+<td>Externe ID des Menüs, falls vorhanden.</td>
+</tr>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Bezeichnung des Menüs (erst in nächster MensaMax Version gesetzt, aktuell immer NULL.</td>
+</tr>
+<tr>
+<td>anzahl</td>
+<td>number</td>
+<td>Anzahl der bestellten Menüs.</td>
+</tr>
+<tr>
+<td>speisenamen</td>
+<td>array of string</td>
+<td>Namen der Speisen dieses Menüs.</td>
+</tr>
+<tr>
+<td>ausgabeorte</td>
+<td>array of <a href="#ausgabeort">Ausgabeort</a></td>
+<td>Ausgabeorte der Menüs.</td>
+</tr>
+</tbody></table>
+<h3 id='ausgabeort'>Ausgabeort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Name des Ausgabeortes.</td>
+</tr>
+<tr>
+<td>anzahl</td>
+<td>number</td>
+<td>Anzahl der an diesem Ausgabeort bestellten Menüs.</td>
+</tr>
+<tr>
+<td>ausgabeschichten</td>
+<td>array of <a href="#ausgabeschicht">Ausgabeschicht</a></td>
+<td>Ausgabeschichten der Ausgabeorte.</td>
+</tr>
+</tbody></table>
+<h3 id='ausgabeschicht'>Ausgabeschicht</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Bezeichnung der Ausgabeschicht.</td>
+</tr>
+<tr>
+<td>anzahl</td>
+<td>number</td>
+<td>Anzahl der in dieser Schicht ausgegebenen Menüs.</td>
+</tr>
+<tr>
+<td>zubereitungsmerkmale</td>
+<td>array of <a href="#zubereitungsmerkmal">Zubereitungsmerkmal</a></td>
+<td>Zubereitungsmerkmale (z.B. Allergie, ...).</td>
+</tr>
+</tbody></table>
+<h3 id='zubereitungsmerkmal'>Zubereitungsmerkmal</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Bezeichnung des Zubereitungsmerkmals.</td>
+</tr>
+<tr>
+<td>anzahl</td>
+<td>number</td>
+<td>Anzahl der Menüs in dieser Schicht mit diesem Zubereitungsmerkmal.</td>
+</tr>
+</tbody></table>
+<h1 id='person'>Person</h1><h2 id='person-erstellen'>Person erstellen</h2>
+<p>Dieser Endpunkt erstellt eine Person für den angegebenen Mandanten und gibt die ID der erstellten Person zurück.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person?mandantName=[MANDANTNAME]"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'{"vorname":"MensaMax","name":"Benutzer"}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"vorname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MensaMax"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benutzer"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="mi">1234</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>201 CREATED
+</code></pre><h3 id='http-anfrage-6'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/person?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-4'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Mandantname, für den die Person erstellt werden soll.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameter-3'>Body-Parameter</h3><h3 id='person-2'>Person</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611; (beim Ändern)</td>
+<td>number</td>
+<td>ID der Person. Wird beim Erstellen einer Person weggelassen. Muss beim Ändern einer Person angegeben werden.</td>
+</tr>
+<tr>
+<td>vorname</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Vorname der Person.</td>
+</tr>
+<tr>
+<td>name</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Name der Person.</td>
+</tr>
+<tr>
+<td>geburtsdatum</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Geburtsdatum der Person.</td>
+</tr>
+<tr>
+<td>loginname</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Benutzername. Wenn NULL oder nicht angegeben, dann wird der Loginname automatisch generiert.</td>
+</tr>
+<tr>
+<td>telefon</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Telefonnummer der Person.</td>
+</tr>
+<tr>
+<td>handy</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Handynummer der Person.</td>
+</tr>
+<tr>
+<td>fax</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Faxnummer der Person.</td>
+</tr>
+<tr>
+<td>email</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>E-Mail Adresse der Person.</td>
+</tr>
+<tr>
+<td>standardausgabeort</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Bezeichnung des Ausgabeortes. Es wird keine Änderung vorgenommen, wenn der Ausgabeort nicht existiert.</td>
+</tr>
+<tr>
+<td>bestellregeln</td>
+<td style="text-align: center"></td>
+<td>array of <a href="#bestellregel">Bestellregel</a></td>
+<td>Bei Angabe von Bestellregeln muss ein Standardausgabeort übergeben werden, der in Regeln definiert ist.</td>
+</tr>
+<tr>
+<td>anrede</td>
+<td style="text-align: center"></td>
+<td><a href="#anrede">Anrede</a></td>
+<td>Anrede der Person.</td>
+</tr>
+<tr>
+<td>preiskategorien</td>
+<td style="text-align: center"></td>
+<td>array of <a href="#preiskategorie">Preiskategorie</a></td>
+<td>Beim Weglassen werden Standardpreiskategorien angelegt.</td>
+</tr>
+<tr>
+<td>adresse</td>
+<td style="text-align: center"></td>
+<td><a href="#adresse">Adresse</a></td>
+<td>Adresse der Person.</td>
+</tr>
+<tr>
+<td>nummern</td>
+<td style="text-align: center"></td>
+<td><a href="#nummer">Nummer</a></td>
+<td>Sammlung an Nummern.</td>
+</tr>
+<tr>
+<td>klasse</td>
+<td style="text-align: center"></td>
+<td><a href="#klasse">Klasse</a></td>
+<td>Klasse oder Abteilung der Person.</td>
+</tr>
+<tr>
+<td>einrichtung</td>
+<td style="text-align: center"></td>
+<td><a href="#einrichtung">Einrichtung</a></td>
+<td>Einrichtung der Person.</td>
+</tr>
+<tr>
+<td>identifikation</td>
+<td style="text-align: center"></td>
+<td>array of <a href="#identifikation">Identifikation</a></td>
+<td>Liste aller Identifikationen.</td>
+</tr>
+<tr>
+<td>setInitialPasswort</td>
+<td style="text-align: center"></td>
+<td>boolean</td>
+<td>Gibt an, ob ein Initialpasswort für die Person erzeugt werden soll. Standardwert: True.</td>
+</tr>
+<tr>
+<td>aktivAb</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Das Datum ab wann die Person aktiv ist und Bestellungen vornehmen darf. Bei nicht Angabe aktiv ab heute.</td>
+</tr>
+</tbody></table>
+<h3 id='bestellregel'>Bestellregel</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>regelId</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Regel ID.</td>
+</tr>
+<tr>
+<td>value</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Regel Wert.</td>
+</tr>
+</tbody></table>
+<h3 id='preiskategorie'>Preiskategorie</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>day</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>Wochentag (0 .. 7)</td>
+</tr>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Wenn die Preiskategorie nicht existiert, wird die Standardpreiskategorie verwendet.</td>
+</tr>
+<tr>
+<td>von</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Gültigkeitsbeginn. Bei nicht Angabe gültig ab heute.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Wochentage:
+  <ol start="0">
+    <li>Sonntag</li>
+    <li>Montag</li>
+    <li>Dienstag</li>
+    <li>Mittwoch</li>
+    <li>Donnerstag</li>
+    <li>Freitag</li>
+    <li>Samstag</li>
+  </ol>
+</aside>
+<h3 id='anrede'>Anrede</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung der Anrede.</td>
+</tr>
+<tr>
+<td>briefanrede</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Briefanrede, zur verwendung in Serienbriefen.</td>
+</tr>
+<tr>
+<td>geschlecht</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>Geschlecht der Person (0..3, 100).</td>
+</tr>
+<tr>
+<td>schluessel</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Schlüssel der Anrede.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Geschlecht:
+  <ul style="list-style: none;">
+    <li>0. Neutral</li>
+    <li>1. Männlich</li>
+    <li>2. Weiblich</li>
+    <li>3. Divers</li>
+    <li>100. Juristisch</li>
+  <ul>
+</aside>
+<h3 id='adresse'>Adresse</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erfoderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>strasse</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Straße</td>
+</tr>
+<tr>
+<td>hausNr</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Hausnummer</td>
+</tr>
+<tr>
+<td>hausNrZusatz</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Hausnummernzusatz</td>
+</tr>
+<tr>
+<td>plz</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Postleitzahl</td>
+</tr>
+<tr>
+<td>ort</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Ort</td>
+</tr>
+<tr>
+<td>ortsteil</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Ortsteil</td>
+</tr>
+</tbody></table>
+<h3 id='nummer'>Nummer</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>personalnummer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Personalnummer</td>
+</tr>
+<tr>
+<td>kundennummer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Kundennummer</td>
+</tr>
+<tr>
+<td>objektnummer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Objektnummer</td>
+</tr>
+<tr>
+<td>steuernummer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Steuernummer</td>
+</tr>
+<tr>
+<td>kennziffer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Kennziffer</td>
+</tr>
+</tbody></table>
+<h3 id='klasse'>Klasse</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Bezeichnung der Klasse.</td>
+</tr>
+</tbody></table>
+<h3 id='einrichtung'>Einrichtung</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Bezeichnung der Einrichtung. Wenn die Einrichtung mit dieser Bezeichnung in MensaMax nicht vorhanden ist, wird sie für den Mandanten angelegt.</td>
+</tr>
+</tbody></table>
+<h3 id='identifikation'>Identifikation</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>typ</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>Typ der Identifikation (1..5).</td>
+</tr>
+<tr>
+<td>value</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Wert der Identifikation.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice" id="identifikation-typ">
+Identifikation Typ:
+  <ol>
+    <li>Barcode</li>
+    <li>RFID</li>
+    <li>PAN</li>
+    <li>IPERS</li>
+    <li>UID</li>
+  </ol>
+</aside>
+<h3 id='body-antwort-6'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td>number</td>
+<td>ID der Person.</td>
+</tr>
+</tbody></table>
+<h2 id='person-suchen'>Person suchen</h2>
+<p>Über diesen Endpunkt kann eine Suche der Personen durchgeführt werden.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person/search"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'{"name": "Mustermann", ...}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mustermann"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vorname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"geburtsdatum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1990-12-31T00:00:00+01:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"loginname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MusMa0007"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"personalnummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"kundennummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"objektnummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"steuernummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"kennziffer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"klasse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1a"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mustermann"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vorname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"geburtsdatum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1990-12-31T00:00:00+01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"loginname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MusMa0007"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"telefon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07123 / 1234"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"handy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0151 / 987654321"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07123 / 1235"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"max.mustermann@maxdorf.de"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"standardausgabeort"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lounge"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bestellregeln"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"regelId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ausgabort"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lounge"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"preiskategorien"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Erwachsener"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Erwachsener"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Erwachsener"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Erwachsener"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schüler"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schüler"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schüler"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"anrede"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Herr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"briefanrede"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sehr geehrter Herr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"geschlecht"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"schluessel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"adresse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"strasse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lindenstr."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hausNr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hausNrZusatz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"plz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ort"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maxdorf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ortsteil"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"nummern"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"personalnummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kundennummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"objektnummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"steuernummer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kennziffer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"klasse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1a"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"einrichtung"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grundschule"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"identifikation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"010BE120F5"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"aktivAb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-09-01T00:00:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-7'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/person/search?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-5'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Einschränkung der Suche auf Personen, die diesem Mandanten zugeordnet sind.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameter-4'>Body-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Nachname der Person.</td>
+</tr>
+<tr>
+<td>vorname</td>
+<td style="text-align: center"></td>
+<td>Vorname der Person.</td>
+<td></td>
+</tr>
+<tr>
+<td>geburtsdatum</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Geburtsdatum der Person.</td>
+</tr>
+<tr>
+<td>loginname</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Login der Person.</td>
+</tr>
+<tr>
+<td>personalnummer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Personalnummer der Person.</td>
+</tr>
+<tr>
+<td>kundennummer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Kundennummer der Person.</td>
+</tr>
+<tr>
+<td>objektnummer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Objektnummer der Person.</td>
+</tr>
+<tr>
+<td>steuernummer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Steuernummer der Person.</td>
+</tr>
+<tr>
+<td>kennziffer</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Kennziffer der Person.</td>
+</tr>
+<tr>
+<td>klasse</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Klasse der Person.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Alle Body-Parameter sind optional und können kombiniert werden.
+<span style="font-weight: bold;">Ein Parameter wird ignoriert (nicht erkannt), wenn er falsch geschrieben ist.</span>
+</aside>
+<h3 id='body-antwort-7'>Body-Antwort</h3>
+<p>array of <a href="#person-2">Person</a></p>
+<h2 id='person-andern'>Person ändern</h2>
+<p>Dieser Endpunkt ändert eine Person für den angegebenen Mandanten.
+Wichtig hierbei ist die ID der Person.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person?mandantName=[MANDANTNAME]"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'{"id": 1234, ...}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vorname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max edit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mustermann edit"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="mi">1234</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-8'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/person?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-6'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Mandantname, für den die Person geändert werden soll.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameter-5'>Body-Parameter</h3>
+<p>Datenstruktur einer <a href="#person-2">Person</a>.</p>
+<h3 id='body-antwort-8'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td>number</td>
+<td>ID der Person.</td>
+</tr>
+</tbody></table>
+<h2 id='person-inaktiv-setzen'>Person inaktiv setzen</h2>
+<p>Setzt eine Person in MensaMax zu einem bestimmten Datum auf inaktiv. Das Datum muss im vorgegebenen Format übergeben werden.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person/[ID]/deactivate"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"deactivationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2099-1-1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-9'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/person/[ID]/deactivate?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-7'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>ID der Person.</td>
+</tr>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Mandantname, für den die Person inaktiv gesetzt werden soll.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameter-6'>Body-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>deactivationDate</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Das Datum, zu dem die Person auf inaktiv gesetzt werden soll.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Das Datum darf nicht in der Vergangenheit liegen, eine Person kann also nicht rückwirkend inaktiv gesetzt werden.
+Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
+</aside>
+<h2 id='person-aktiv-setzen'>Person aktiv setzen</h2>
+<p>Setzt eine Person in MensaMax aktiv.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person/[ID]/activate?mandantName=[MANDANTNAME]"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-10'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/person/[ID]/activate?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-8'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>ID der Person.</td>
+</tr>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Mandantname, für den die Person aktiv gesetzt werden soll.</td>
+</tr>
+</tbody></table>
+<h2 id='person-loschen'>Person löschen</h2>
+<p>Über diesen Endpunkt kann eine Person gelöscht werden.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person/[ID]"</span>
+  --request DELETE
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-11'>HTTP-Anfrage</h3>
+<p><code>DELETE https://[SERVER]/api/person/[ID]</code></p>
+<h3 id='query-parameter-9'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>ID der Person, die gelöscht werden soll.</td>
+</tr>
+</tbody></table>
+<h2 id='ein-bild-zu-einer-person-hochladen'>Ein Bild zu einer Person hochladen</h2>
+<p>Dieser Request läd ein Bild hoch und weist dieses der angegebenen Person zu.</p>
+<pre class="highlight shell tab-shell"><code>curl --request POST <span class="s1">'https://[SERVER]/api/upload?personId=[ID]'</span>
+--header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+--form <span class="s2">"=@/C:/Pictures/1234.jpg"</span>
+
+<span class="c"># PowerShell:</span>
+<span class="nv">$headers</span> <span class="o">=</span> New-Object <span class="s2">"System.Collections.Generic.Dictionary[[String],[String]]"</span>
+<span class="nv">$headers</span>.Add<span class="o">(</span><span class="s2">"Authorization"</span>, <span class="s2">"Bearer [API-KEY]"</span><span class="o">)</span>
+
+<span class="nv">$multipartContent</span> <span class="o">=</span> <span class="o">[</span>System.Net.Http.MultipartFormDataContent]::new<span class="o">()</span>
+<span class="nv">$multipartFile</span> <span class="o">=</span> <span class="s1">'/C:/Pictures/1234.jpg'</span>
+<span class="nv">$FileStream</span> <span class="o">=</span> <span class="o">[</span>System.IO.FileStream]::new<span class="o">(</span><span class="nv">$multipartFile</span>, <span class="o">[</span>System.IO.FileMode]::Open<span class="o">)</span>
+<span class="nv">$fileHeader</span> <span class="o">=</span> <span class="o">[</span>System.Net.Http.Headers.ContentDispositionHeaderValue]::new<span class="o">(</span><span class="s2">"form-data"</span><span class="o">)</span>
+<span class="nv">$fileHeader</span>.Name <span class="o">=</span> <span class="s2">""</span>
+<span class="nv">$fileHeader</span>.FileName <span class="o">=</span> <span class="s2">"/C:Pictures/1234.jpg"</span>
+<span class="nv">$fileContent</span> <span class="o">=</span> <span class="o">[</span>System.Net.Http.StreamContent]::new<span class="o">(</span><span class="nv">$FileStream</span><span class="o">)</span>
+<span class="nv">$fileContent</span>.Headers.ContentDisposition <span class="o">=</span> <span class="nv">$fileHeader</span>
+<span class="nv">$multipartContent</span>.Add<span class="o">(</span><span class="nv">$fileContent</span><span class="o">)</span>
+
+<span class="nv">$body</span> <span class="o">=</span> <span class="nv">$multipartContent</span>
+
+<span class="nv">$response</span> <span class="o">=</span> Invoke-RestMethod <span class="s1">'https://[SERVER]/api/upload?personId=[ID]'</span> -Method <span class="s1">'POST'</span> -Headers <span class="nv">$headers</span> -Body <span class="nv">$body</span>
+<span class="nv">$response</span> | ConvertTo-Json
+</code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-12'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/upload?personId=[ID]</code></p>
+<h3 id='query-parameter-10'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>personId</td>
+<td style="text-align: center">&#x2611;</td>
+<td>ID der Person.</td>
+</tr>
+</tbody></table>
+<h2 id='personenbestellungen'>Personenbestellungen</h2>
+<p>Liefert eine Liste der Personen mit ihren Bestellungen an einem bestimmten Tag.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person/bestellungen?mandantName=[MANDANTNAME]&amp;datum=[DATUM]"</span>
+  --request GET
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+</code></pre><pre class="highlight json tab-json--request"><code></code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"anzahlPersonen"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"personen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"person"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"vorname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"nachname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mustermann"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"loginName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MusMa007"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"einrichtung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Realschule"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"anzahlBestellungen"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bestellungen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vollwertkost"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"bestelldatum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-11-07T00:00:00"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"preiskategorie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Preis1"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"kommentar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-13'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/person/bestellungen?mandantName=[MANDANTNAME]&amp;datum=[DATUM]</code></p>
+<h3 id='query-parameter-11'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Mandantname.</td>
+</tr>
+<tr>
+<td>datum</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Tag der Bestellungen.</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort-9'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>anzahlPersonen</td>
+<td>number</td>
+<td>Anzahl der Personen mit Bestellungen an diesem Tag.</td>
+</tr>
+<tr>
+<td>personen</td>
+<td>array of <a href="#personenbestellung">Personenbestellung</a></td>
+<td>Bestellungdetails einer Person.</td>
+</tr>
+</tbody></table>
+<h3 id='personenbestellung'>Personenbestellung</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>person</td>
+<td><a href="#person-3">Person</a></td>
+<td>Details zur Person im Bestellkontext.</td>
+</tr>
+<tr>
+<td>anzahlBestellungen</td>
+<td>number</td>
+<td>Anzahl der Bestellungen dieser Person.</td>
+</tr>
+<tr>
+<td>bestellungen</td>
+<td>array of <a href="#bestellung">Bestellung</a></td>
+<td>Liste der Bestellungen dieser Person.</td>
+</tr>
+</tbody></table>
+<h3 id='person-bestellkontext'>Person (Bestellkontext)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>ID der Person.</td>
+</tr>
+<tr>
+<td>vorname</td>
+<td>string</td>
+<td>Vorname der Person.</td>
+</tr>
+<tr>
+<td>nachname</td>
+<td>string</td>
+<td>Nachname der Person.</td>
+</tr>
+<tr>
+<td>loginname</td>
+<td>string</td>
+<td>Loginname der Person.</td>
+</tr>
+<tr>
+<td>einrichtung</td>
+<td>string</td>
+<td>Einrichtung der Person.</td>
+</tr>
+</tbody></table>
+<h3 id='bestellung'>Bestellung</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Bezeichnung der Bestellung.</td>
+</tr>
+<tr>
+<td>bestelldatum</td>
+<td>string</td>
+<td>Datum der Bestellung.</td>
+</tr>
+<tr>
+<td>preiskategorie</td>
+<td>string</td>
+<td>Preiskategorie der Bestellung.</td>
+</tr>
+<tr>
+<td>anzahl</td>
+<td>number</td>
+<td>Bestellanzahl.</td>
+</tr>
+<tr>
+<td>kommentar</td>
+<td>string</td>
+<td>Ein Kommentar zur Bestellung.</td>
+</tr>
+</tbody></table>
+<h2 id='personen-ohne-bestellung'>Personen ohne Bestellung</h2>
+<p>Liefert eine Liste der Personen ohne Bestellung an einem bestimmten Tag.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person/ohneBestellung?mandantName=[MANDANTNAME]&amp;datum=[DATUM]"</span>
+  --request GET
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+</code></pre><pre class="highlight json tab-json--request"><code></code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"anzahlPersonen"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"personen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vorname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nachname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mustermann"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"loginName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MusMa007"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"einrichtung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Realschule"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-14'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/person/ohneBestellung?mandantName=[MANDANTNAME]&amp;datum=[DATUM]</code></p>
+<h3 id='query-parameter-12'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Mandantname.</td>
+</tr>
+<tr>
+<td>datum</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Tag der Bestellungen.</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort-10'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>anzahl</td>
+<td>number</td>
+<td>Anzahl der Personen ohne Bestellung an diesem Tag.</td>
+</tr>
+<tr>
+<td>personen</td>
+<td>array of <a href="#person-3">Person</a></td>
+<td>Details zur Person im Bestellkontext.</td>
+</tr>
+</tbody></table>
+<h1 id='klassenstufe'>Klassenstufe</h1><h2 id='klassenstufe-erstellen'>Klassenstufe erstellen</h2>
+<p>Über diesen Endpunkt kann eine Klassenstufe erstellt werden.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassenstufe"</span>
+  --request POST 
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span> 
+  --header <span class="s2">"Content-Type: application/json"</span> 
+  --data <span class="s1">'{"bezeichnung":"Neue Klassenstufe","reihenfolge":1}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klassenstufe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reihenfolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klassenstufe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reihenfolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>201 CREATED
+</code></pre><h3 id='http-anfrage-15'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/klassenstufe</code></p>
+<h3 id='body-parameter-7'>Body-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung für die Klassenstufe.</td>
+</tr>
+<tr>
+<td>reihenfolge</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>Reihenfolge für die Klassenstufe.</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort-11'>Body-Antwort</h3><h3 id='klassenstufe-2'>Klassenstufe</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>ID der neu erstellten Klassenstufe.</td>
+</tr>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Bezeichnung der Klassenstufe.</td>
+</tr>
+<tr>
+<td>reihenfolge</td>
+<td>string</td>
+<td>Reihenfolge der Klassenstufe.</td>
+</tr>
+</tbody></table>
+<h2 id='klassenstufen-abrufen'>Klassenstufen abrufen</h2>
+<p>Liefert die Anzahl und eine Liste der Klassenstufen.
+Über einen zweiten Endpunkt kann eine Klassenstufe mit der entsprechenden ID abgefragt werden.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassenstufen"</span>
+ --request GET
+ --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klassenstufe"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reihenfolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-16'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/klassenstufen</code></p>
+<h3 id='body-antwort-12'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>anzahl</td>
+<td>number</td>
+<td>Anzahl der Klassenstufen.</td>
+</tr>
+<tr>
+<td></td>
+<td>array of <a href="#klassenstufe-2">Klassenstufe</a></td>
+<td>Liste der Klassenstufen.</td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassenstufe/1"</span>
+ --request GET
+ --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klassenstufe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reihenfolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-17'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/klassenstufe/[ID]</code></p>
+<h3 id='query-parameter-13'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>ID der Klassenstufe.</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort-13'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td><a href="#klassenstufe-2">Klassenstufe</a></td>
+<td>Eine bestimmte Klassenstufe.</td>
+</tr>
+</tbody></table>
+<h2 id='klassenstufe-andern'>Klassenstufe ändern</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassenstufe"</span>
+  --request PUT
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'{"id":1,"bezeichnung":"Klassenstufe geändert","reihenfolge":2}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Klassenstufe geändert"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reihenfolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>204 NO CONTENT
+</code></pre><h3 id='http-anfrage-18'>HTTP-Anfrage</h3>
+<p><code>PUT https://[SERVER]/api/klassenstufe</code></p>
+<h3 id='body-parameter-8'>Body-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>ID der Klassenstufe.</td>
+</tr>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Bezeichnung der Klassenstufe.</td>
+<td></td>
+</tr>
+<tr>
+<td>reihenfolge</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Reihenfolge der Klassenstufe.</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='klassenstufe-loschen'>Klassenstufe löschen</h2>
+<p>Dieser Endpunkt löscht eine Klassenstufe. Die Klassenstufe kann nur gelöscht werden, wenn dieser keine Klasse zugeordnet ist.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassenstufe/[ID]"</span>
+  --request DELETE
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight html tab-html"><code>204 NO CONTENT
+</code></pre><h3 id='http-anfrage-19'>HTTP-Anfrage</h3>
+<p><code>DELETE https://[SERVER]/api/klassenstufe/[ID]</code></p>
+<h3 id='query-parameter-14'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>ID der Klassenstufe.</td>
+</tr>
+</tbody></table>
+<h1 id='klasse-2'>Klasse</h1><h2 id='klasse-erstellen'>Klasse erstellen</h2>
+<p>Diser Endpunkt legt eine neue Klasse an. Eine Klasse kann eine Folgeklasse haben. Eine Klasse muss einer Klassenstufe zugeordnet sein.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klasse"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'{"bezeichnung":"Neue Klasse","rang":1,"folgeklasseId":2,"klassenstufeId":1}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klasse"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rang"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"folgeklasseId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"klassenstufeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klasse"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rang"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"folgeklasseId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"klassenstufeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>201 CREATED
+</code></pre><h3 id='http-anfrage-20'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/klasse</code></p>
+<h3 id='body-parameter-9'>Body-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung der Klasse.</td>
+</tr>
+<tr>
+<td>rang</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>Rang der Klasse</td>
+</tr>
+<tr>
+<td>folgeklasseId</td>
+<td style="text-align: center"></td>
+<td>number</td>
+<td>ID der Folgeklasse.</td>
+</tr>
+<tr>
+<td>klassenstufeId</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>ID der Klassenstufe.</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort-14'>Body-Antwort</h3><h3 id='klasse-3'>Klasse</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>ID der Klasse.</td>
+</tr>
+<tr>
+<td>bezeichnung</td>
+<td>string</td>
+<td>Bezeichnung der Klasse.</td>
+</tr>
+<tr>
+<td>rang</td>
+<td>number</td>
+<td>Rang der Klasse</td>
+</tr>
+<tr>
+<td>folgeklasseId</td>
+<td>number</td>
+<td>ID der Folgeklasse.</td>
+</tr>
+<tr>
+<td>klassenstufeId</td>
+<td>number</td>
+<td>ID der Klassenstufe.</td>
+</tr>
+</tbody></table>
+<h2 id='klassen-abrufen'>Klassen abrufen</h2>
+<p>Dieser Enpunkt ruft eine Klassenliste ab.
+Ein weiterer Endpunkt ruft eine bestimmte Klasse ab.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassen"</span>
+  --request GET
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"anzahl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klasse"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rang"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"folgeklasseId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"klassenstufeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-21'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/klassen</code></p>
+<h3 id='body-antwort-15'>Body-Antwort</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>anzahl</td>
+<td>number</td>
+<td>Anzahl der Klassen.</td>
+</tr>
+<tr>
+<td></td>
+<td>array of <a href="#klasse-3">Klasse</a></td>
+<td>Liste der Klassen.</td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klasse/1"</span>
+  --request GET
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klasse"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rang"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"folgeklasseId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"klassensufeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-22'>HTTP-Anfrage</h3>
+<p><code>GET https://[SERVER]/api/klasse/[ID]</code></p>
+<h3 id='query-parameter-15'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>ID der Klasse.</td>
+</tr>
+</tbody></table>
+<h3 id='body-antwort-16'>Body-Antwort</h3>
+<p><a href="#klasse-3">Klasse</a></p>
+<h2 id='klasse-andern'>Klasse ändern</h2>
+<p>Dieser Endpunkt ändert eine Klasse.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klasse"</span>
+  --request PUT
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'{"id":1,"bezeichnung":"Klasse geändert","rang":2,"folgeklasseId":2,"klassenstufeId":2}'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Klasse geändert"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rang"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"folgeklasseId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"klassenstufeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>204 NO CONTENT
+</code></pre><h3 id='http-anfrage-23'>HTTP-Anfrage</h3>
+<p><code>PUT https://[SERVER]/api/klasse</code></p>
+<h3 id='body-parameter-10'>Body-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>ID der Klasse.</td>
+</tr>
+<tr>
+<td>bezeichnung</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Bezeichnung der Klasse.</td>
+</tr>
+<tr>
+<td>rang</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>Rang der Klasse.</td>
+</tr>
+<tr>
+<td>folgeklasseId</td>
+<td style="text-align: center"></td>
+<td>number</td>
+<td>ID der Folgeklasse.</td>
+</tr>
+<tr>
+<td>klassenstufeId</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>ID der Klassenstufe.</td>
+</tr>
+</tbody></table>
+<h2 id='klasse-loschen'>Klasse löschen</h2>
+<p>Dieser Endpunkt löscht eine bestimmte Klasse.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klasse/[ID]"</span>
+  --request DELETE
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><pre class="highlight html tab-html"><code>204 NO CONTENT
+</code></pre><h3 id='http-anfrage-24'>HTTP-Anfrage</h3>
+<p><code>DELETE https://[SERVER]/api/klasse/[ID]</code></p>
+<h3 id='query-parameter-16'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td style="text-align: center">&#x2611;</td>
+<td>ID der Klasse.</td>
+</tr>
+</tbody></table>
+<h1 id='identifikationsmedium'>Identifikationsmedium</h1><h2 id='zuweisen'>Zuweisen</h2>
+<p>Dieser Endpunkt weist einer Person ein oder mehrere Identifikationsmedien zu. Das Datum kann weggelassen werden, dann wird das Medium zum heutigen Datum zugewiesen.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/identifikation?mandantName=[MANDANTNAME]"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'[{"personId": 1, ...}]'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identifikationsmedium"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABAB1212"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"datum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-30T01:01:01.000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identifikationsmedium"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EDEDED1212"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"datum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-30T01:01:01.000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-25'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/identifikation?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-17'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Einschränkung der Personen, die diesem Mandanten zugeordnet sind.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameter-11'>Body-Parameter</h3>
+<p>array of <a href="#identifikation-2">Identifikation</a></p>
+<h3 id='identifikation-2'>Identifikation</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>personId</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>ID der Person.</td>
+</tr>
+<tr>
+<td>identifikationsmedium</td>
+<td style="text-align: center">&#x2611;</td>
+<td>array of <a href="#identifikationsmedium-2">Identifikationsmedium</a></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='identifikationsmedium-2'>Identifikationsmedium</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>typ</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td><a href="#identifikation-typ">Identifikationstyp</a></td>
+</tr>
+<tr>
+<td>value</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Wert der Identifikation.</td>
+</tr>
+<tr>
+<td>datum</td>
+<td style="text-align: center"></td>
+<td>string</td>
+<td>Datum des ersten Tages in der Woche.</td>
+</tr>
+</tbody></table>
+<h2 id='zuruckgeben'>Zurückgeben</h2>
+<p>Über diesen Endpoint können Identifikationsmedien zurückgegeben werden.
+Dieses wird zu dem jetzigen Zeitpunkt zurückgegeben.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/identifikation/deactivate?mandantName=[MANDANTNAME]"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
+  --data <span class="s1">'[{"personId": 1, ...}]'</span>
+</code></pre><pre class="highlight json tab-json--request"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identifikationsmedium"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABAB1212"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identifikationsmedium"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EDEDED1212"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><pre class="highlight html tab-html"><code>200 OK
+</code></pre><h3 id='http-anfrage-26'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/identifikation?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-18'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Einschränkung der Personen, die diesem Mandanten zugeordnet sind.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameter-12'>Body-Parameter</h3>
+<p>array of <a href="#identifikation-2">Identifikation</a></p>
+<h1 id='server-fehler-antworten'>Server Fehler Antworten</h1>
+<table><thead>
+<tr>
+<th>HTTP-Fehlercode</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request - Die Anfrage ist nicht valide. Meistens sind die Eingaben fehlerhaft oder fehlen komplett.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized - Der API-Key ist ungültig, abgelaufen oder fehlt in der Anfrage.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden - Der Zugriff auf diesen Endpoint ist nicht erlaubt.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found - Der angefragte Endpoint existiert nicht oder ein Datensatz wurde nicht gefunden.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed - Die angegebene HTTP-Methode ist auf diesem Endpunkt nicht erlaubt.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable - Das angefragte Format ist nicht JSON.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Conflict - Die Anfrage steht in Konflikt mit dem aktuellen Zustand auf dem Server. Die Antwort enthält Hinweise für die Lösung.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone - Der angefragte Endpoint existiert nicht mehr.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests - Zu viele Anfragen in kurzer Zeit.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error - Wir haben auf unseren Servern ein Problem. Bitte später wiederholen.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable - Wir sind aufgrund von Wartungsarbeiten vorübergehend offline.</td>
+</tr>
+</tbody></table>
+
+<p>Teilweise enthalten die Fehler-Antworten des Servers eine genauere Beschreibung im Body um die Fehlersuche so gut wie möglich einzugrenzen.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="json--request">JSON Body-Anfrage</a>
+                <a href="#" data-language-name="json--response">JSON Body-Antwort</a>
+                <a href="#" data-language-name="html">HTTP-Statuscode</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
