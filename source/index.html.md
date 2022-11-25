@@ -11,12 +11,13 @@ title: MensaMax API-Dokumentation
 
 toc_footers:
   - <a href='https://mensamax.de'>MensaMax</a>
-  - "<style>.toc-wrapper .logo { padding: 20px; margin-left: auto; margin-right: auto; } .http-status-code { padding: 5px; background-color: white; }</style>"
+  - "<style>.toc-wrapper .logo { padding: 20px; margin-left: auto; margin-right: auto; height: 10em; border-radius: 50%;} .http-status-code { padding: 5px; background-color: white; }</style>"
 
 search: true
 ---
 
 # MensaMax API
+
 ### Dokumentation Version 3.22.0811.01
 
 Herzlich willkommen zur MensaMax-API. Mithilfe dieser Schnittstelle können folgende Daten abgerufen oder Aktionen ausgeführt werden:
@@ -40,6 +41,7 @@ MensaMax erwartet, dass der API-Key in allen Anfragen an den Server in einem Hea
 Der Platzhalter <code>[API-KEY]</code> muss mit dem persönlichen API-Key ersetzt werden.
 
 Alle Projekt spezifischen Werte sind in dieser Dokumentation <code>[zwischen eckigen Klammern]</code> dargestellt. Diese Werte dienen als Platzhalter und müssen entsprechend ersetzt werden.
+
 </aside>
 
 <aside class="warning">
@@ -64,7 +66,7 @@ curl "https://[SERVER]/api/createToken"
   "benutzername": "[BENUTZERNAME]",
   "passwort": "[PASSWORT]"
 }
-````
+```
 
 ```json--response
 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 ... yMnzUs5mqLRbv0_k1HgsVQ95tinByUw1ktFn7nm_T4I"
@@ -80,18 +82,18 @@ curl "https://[SERVER]/api/createToken"
 
 ### Body-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung 
---------- | :----------: | -------- | ------------
-projekt | &#x2611; | string | Name des Projekts.
-einrichtung | &#x2611; | string | Einrichtung des Nutzers.
-benutzername | &#x2611; | string | Benutzername eines Nutzers, der zur API-Nutzung berechtigt ist.
-passwort | &#x2611; | string | Passwort des Benutzers.
+| Parameter    | Erforderlich | Datentyp | Beschreibung                                                    |
+| ------------ | :----------: | -------- | --------------------------------------------------------------- |
+| projekt      |   &#x2611;   | string   | Name des Projekts.                                              |
+| einrichtung  |   &#x2611;   | string   | Einrichtung des Nutzers.                                        |
+| benutzername |   &#x2611;   | string   | Benutzername eines Nutzers, der zur API-Nutzung berechtigt ist. |
+| passwort     |   &#x2611;   | string   | Passwort des Benutzers.                                         |
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung 
---------- | -------- | ------------
- | string | API-Key
+| Parameter | Datentyp | Beschreibung |
+| --------- | -------- | ------------ |
+| string    | API-Key  |
 
 # API Status
 
@@ -120,10 +122,10 @@ curl --request GET "https://[SERVER]/api/health"
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-date | string | Aktueller Zeitpunkt der Anfrage.
-version | string | Version der API.
+| Parameter | Datentyp | Beschreibung                     |
+| --------- | -------- | -------------------------------- |
+| date      | string   | Aktueller Zeitpunkt der Anfrage. |
+| version   | string   | Version der API.                 |
 
 # Wochenspeiseplan
 
@@ -564,11 +566,11 @@ curl "https://[SERVER]/api/wochenspeiseplan?mandantName=[MANDANTNAME]&von=[VON]&
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-von | &#x2611; | string | Datum, ab dem Wochenspeisepläne abgerufen werden sollen.
-bis | | string | Datum, bis zu dem Wochenspeisepläne abgerufen werden sollen.
-mandantName | &#x2611; | string | Mandantname für dessen Mandantenverbund der Wochenspeiseplan abgerufen werden soll.
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                                                        |
+| ----------- | :----------: | -------- | ----------------------------------------------------------------------------------- |
+| von         |   &#x2611;   | string   | Datum, ab dem Wochenspeisepläne abgerufen werden sollen.                            |
+| bis         |              | string   | Datum, bis zu dem Wochenspeisepläne abgerufen werden sollen.                        |
+| mandantName |   &#x2611;   | string   | Mandantname für dessen Mandantenverbund der Wochenspeiseplan abgerufen werden soll. |
 
 ### Body-Antwort
 
@@ -576,35 +578,35 @@ array of [Wochenspeiseplan](#wochenspeiseplan-2)
 
 ### Wochenspeiseplan
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-textOben | | string | Text, der oberhalb des Speiseplans angezeigt wird.
-textUnten | | string | Text, der unterhalb des Speiseplans angezeigt wird.
-startDatum | &#x2611; | string | Datum des ersten Tages in der Woche.
-endDatum | | string | Datum des letzten Tages in der Woche.
-tagesspeiseplaene | &#x2611; | array of [Tagesspeiseplan](#tagesspeiseplan) | Liste an Tagesspeiseplänen.
+| Parameter         | Erforderlich | Datentyp                                     | Beschreibung                                        |
+| ----------------- | :----------: | -------------------------------------------- | --------------------------------------------------- |
+| textOben          |              | string                                       | Text, der oberhalb des Speiseplans angezeigt wird.  |
+| textUnten         |              | string                                       | Text, der unterhalb des Speiseplans angezeigt wird. |
+| startDatum        |   &#x2611;   | string                                       | Datum des ersten Tages in der Woche.                |
+| endDatum          |              | string                                       | Datum des letzten Tages in der Woche.               |
+| tagesspeiseplaene |   &#x2611;   | array of [Tagesspeiseplan](#tagesspeiseplan) | Liste an Tagesspeiseplänen.                         |
 
 ### Tagesspeiseplan
 
-Parameter | Erforderlich | Datentyp | Beschreibung
-----------| :------------------------: | -------- | ------------
-datum | &#x2611; | string | Datum des Wochentags.
-positionen | &#x2611; | array of [Tagesspeiseplanposition](#tagesspeiseplanposition) | Liste der Tagesspeiseplanpositionen.
-zusatztext | | string | Täglicher Zusatztext.
+| Parameter  | Erforderlich | Datentyp                                                     | Beschreibung                         |
+| ---------- | :----------: | ------------------------------------------------------------ | ------------------------------------ |
+| datum      |   &#x2611;   | string                                                       | Datum des Wochentags.                |
+| positionen |   &#x2611;   | array of [Tagesspeiseplanposition](#tagesspeiseplanposition) | Liste der Tagesspeiseplanpositionen. |
+| zusatztext |              | string                                                       | Täglicher Zusatztext.                |
 
 ### Tagesspeiseplanposition
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-menuegruppe | &#x2611; | [Menuegruppe](#menuegruppe) | Menügruppe der Tagesspeiseplanposition.
-menue | &#x2611; | [Menue](#menue) | Menü der Tagesspeiseplanpostition.
-mahlzeit | | [Mahlzeit](#mahlzeit) | Mahlzeit der Tagesspeiseplanpostion.
+| Parameter   | Erforderlich | Datentyp                    | Beschreibung                            |
+| ----------- | :----------: | --------------------------- | --------------------------------------- |
+| menuegruppe |   &#x2611;   | [Menuegruppe](#menuegruppe) | Menügruppe der Tagesspeiseplanposition. |
+| menue       |   &#x2611;   | [Menue](#menue)             | Menü der Tagesspeiseplanpostition.      |
+| mahlzeit    |              | [Mahlzeit](#mahlzeit)       | Mahlzeit der Tagesspeiseplanpostion.    |
 
 ### Menuegruppe
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-bezeichnung | &#x2611; | string | Name der Menügruppe. Darüber wird die Menügruppe eindeutig identifiziert.
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                                              |
+| ----------- | :----------: | -------- | ------------------------------------------------------------------------- |
+| bezeichnung |   &#x2611;   | string   | Name der Menügruppe. Darüber wird die Menügruppe eindeutig identifiziert. |
 
 <aside class="notice">
 Die Menügruppe kann nicht neu gesetzt werden und wird über die Bezeichnung abgeglichen.
@@ -612,19 +614,19 @@ Die Menügruppe kann nicht neu gesetzt werden und wird über die Bezeichnung abg
 
 ### Menue
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-externeId | | string | Externe ID des Menüs.
-bezeichnung | &#x2611; | string | Bezeichnung des Menüs (aktuell immer null und wird beim setzen ignoriert, kann aber in der Zukunft evtl. gesetzt werden).
-speisen | &#x2611; | array of [Speise](#speise) | Liste von Speisen des Menüs.
-zusatzstoffe | | array of [Zusatzstoff](#zusatzstoff) | Liste von Zusatzstoffen eines Menüs. Diese werden anhand der in den Speisen angegebenen Zusatzstoffen zusammengestellt und können **nicht** extra gesetzt werden.
-allergene | | array of [Allergen](#allergen) | Liste von Allergenen eines Menüs. Diese werden anhand der in den Speisen angegebenen Allergenen zusammengestellt und können **nicht** extra gesetzt werden.
+| Parameter    | Erforderlich | Datentyp                             | Beschreibung                                                                                                                                                      |
+| ------------ | :----------: | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| externeId    |              | string                               | Externe ID des Menüs.                                                                                                                                             |
+| bezeichnung  |   &#x2611;   | string                               | Bezeichnung des Menüs (aktuell immer null und wird beim setzen ignoriert, kann aber in der Zukunft evtl. gesetzt werden).                                         |
+| speisen      |   &#x2611;   | array of [Speise](#speise)           | Liste von Speisen des Menüs.                                                                                                                                      |
+| zusatzstoffe |              | array of [Zusatzstoff](#zusatzstoff) | Liste von Zusatzstoffen eines Menüs. Diese werden anhand der in den Speisen angegebenen Zusatzstoffen zusammengestellt und können **nicht** extra gesetzt werden. |
+| allergene    |              | array of [Allergen](#allergen)       | Liste von Allergenen eines Menüs. Diese werden anhand der in den Speisen angegebenen Allergenen zusammengestellt und können **nicht** extra gesetzt werden.       |
 
 ### Mahlzeit
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-bezeichnung | &#x2611; | string | Bezeichnung der Mahlzeit (Frühstück, Mittagessen, ...)
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                           |
+| ----------- | :----------: | -------- | ------------------------------------------------------ |
+| bezeichnung |   &#x2611;   | string   | Bezeichnung der Mahlzeit (Frühstück, Mittagessen, ...) |
 
 <aside class="notice">
 Mahlzeit ist aktuell immer NULL, kann aber in der Zukunft evtl. gesetzt werden.
@@ -632,15 +634,15 @@ Mahlzeit ist aktuell immer NULL, kann aber in der Zukunft evtl. gesetzt werden.
 
 ### Speise
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-bezeichnung | &#x2611; | string | Bezeichnung der Speise, anhand derer die Identifikation erfolgt.
-zusatzstoffe | | array of [Zusatzstoff](#zusatzstoff) | Liste von Zusatzstoffen.
-allergene | | array of [Allergen](#allergen) | Liste von Allergenen.
-naehrwert | | array of [Naehrwert](#naehrwert) | Liste von Nährwerten.
-vegetarisch | | boolean | True = vergetarisch, false = nicht vegetarisch.
-menuefolge | | number | Menüfolge (0 .. 2) Standardwert: Hauptspeise.
-piktogramm | | number | Piktogramm der Speise (1 .. 12).
+| Parameter    | Erforderlich | Datentyp                             | Beschreibung                                                     |
+| ------------ | :----------: | ------------------------------------ | ---------------------------------------------------------------- |
+| bezeichnung  |   &#x2611;   | string                               | Bezeichnung der Speise, anhand derer die Identifikation erfolgt. |
+| zusatzstoffe |              | array of [Zusatzstoff](#zusatzstoff) | Liste von Zusatzstoffen.                                         |
+| allergene    |              | array of [Allergen](#allergen)       | Liste von Allergenen.                                            |
+| naehrwert    |              | array of [Naehrwert](#naehrwert)     | Liste von Nährwerten.                                            |
+| vegetarisch  |              | boolean                              | True = vergetarisch, false = nicht vegetarisch.                  |
+| menuefolge   |              | number                               | Menüfolge (0 .. 2) Standardwert: Hauptspeise.                    |
+| piktogramm   |              | number                               | Piktogramm der Speise (1 .. 12).                                 |
 
 <aside class="notice">
 Menüfolgen:
@@ -671,10 +673,10 @@ Auswahl Piktogramme:
 
 ### Zusatzstoff
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-bezeichnung | &#x2611; | string | Bezeichnung des Zusatzstoffs, anhand derer die Identifikation erfolgt.
-kennung | &#x2611; | string | Kennung des Zusatzstoffes.
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                                           |
+| ----------- | :----------: | -------- | ---------------------------------------------------------------------- |
+| bezeichnung |   &#x2611;   | string   | Bezeichnung des Zusatzstoffs, anhand derer die Identifikation erfolgt. |
+| kennung     |   &#x2611;   | string   | Kennung des Zusatzstoffes.                                             |
 
 <aside class="notice">
 Ein Zusatzstoff wird durch die Bezeichnung und Kennung identifiziert. Wenn es keinen Zusatzstoff mit dieser Bezeichnung und Kennung gibt, dann wird die Kennung überprüft. Wenn es diese Kennung mit einer anderen Bezeichnung noch nicht gibt, wird der Zusatzstoff neu angelegt.
@@ -682,11 +684,10 @@ Ein Zusatzstoff wird durch die Bezeichnung und Kennung identifiziert. Wenn es ke
 
 ### Allergen
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-bezeichnung | &#x2611; | string | Bezeichnung des Allergens, anhand derer die Identifikation erfolgt.
-kennung | &#x2611; | string | Kennung des Allergens.
-
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                                        |
+| ----------- | :----------: | -------- | ------------------------------------------------------------------- |
+| bezeichnung |   &#x2611;   | string   | Bezeichnung des Allergens, anhand derer die Identifikation erfolgt. |
+| kennung     |   &#x2611;   | string   | Kennung des Allergens.                                              |
 
 <aside class="notice">
 Ein Allergen wird durch die Bezeichnung und Kennung identifiziert. Wenn es kein Allergen mit dieser Bezeichnung und Kennung gibt, dann wird die Kennung überprüft. Wenn es diese Kennung mit einer anderen Bezeichnung noch nicht gibt, wird das Allergen neu angelegt.
@@ -695,13 +696,13 @@ Zusatzstoffe und Allergene mit der selben Kennung sind nicht zulässig.
 
 ### Naehrwert
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :------------------------: | -------- | ------------
-bezeichnung | &#x2611; | string | Bezeichnung des Nährwerts, anhand derer abgeglichen wird.
-menge | &#x2611; | number | Menge des Nährwerts (z.B. 13 bei 13g Kohlenhydrate pro 1kg).
-einheit | &#x2611; | string | Einheit des Nährwerts (z.B. g bei 13g Kohlenhydrate pro 1kg).
-bezugsmenge | &#x2611; | number | Bezugsmenge (z.B. 1 bei 13g Kohlenhydrate pro 1kg).
-bezugseinheit | &#x2611; | string | Bezugseinheit (z.B. kg bei 13g Kohlenhydrate pro 1kg).
+| Parameter     | Erforderlich | Datentyp | Beschreibung                                                  |
+| ------------- | :----------: | -------- | ------------------------------------------------------------- |
+| bezeichnung   |   &#x2611;   | string   | Bezeichnung des Nährwerts, anhand derer abgeglichen wird.     |
+| menge         |   &#x2611;   | number   | Menge des Nährwerts (z.B. 13 bei 13g Kohlenhydrate pro 1kg).  |
+| einheit       |   &#x2611;   | string   | Einheit des Nährwerts (z.B. g bei 13g Kohlenhydrate pro 1kg). |
+| bezugsmenge   |   &#x2611;   | number   | Bezugsmenge (z.B. 1 bei 13g Kohlenhydrate pro 1kg).           |
+| bezugseinheit |   &#x2611;   | string   | Bezugseinheit (z.B. kg bei 13g Kohlenhydrate pro 1kg).        |
 
 ## Wochenspeiseplan setzen
 
@@ -723,7 +724,7 @@ curl "https://[SERVER]/api/wochenspeiseplan"
   "endDatum": "2022-04-22T00:00:00+01:00",
   "tagesspeiseplaene": [...]
 }
-````
+```
 
 ```json--response
 "Wochenspeiseplan der Kalenderwoche von 18.04.2022 bis 22.04.2022 ist erfolgreich in Projekt in MensaMax hinterlegt."
@@ -739,9 +740,9 @@ curl "https://[SERVER]/api/wochenspeiseplan"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-mandantName | &#x2611; | Mandantname, für dessen Mandantenverbund der Wochenspeiseplan gesetzt werden soll.
+| Parameter   | Erforderlich | Beschreibung                                                                       |
+| ----------- | :----------: | ---------------------------------------------------------------------------------- |
+| mandantName |   &#x2611;   | Mandantname, für dessen Mandantenverbund der Wochenspeiseplan gesetzt werden soll. |
 
 ### Body-Parameter
 
@@ -749,9 +750,9 @@ Im Body muss der **[Wochenspeiseplan](#wochenspeiseplan-2)** gesetzt werden.
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
- | string | Status der Anfrage.
+| Parameter | Datentyp            | Beschreibung |
+| --------- | ------------------- | ------------ |
+| string    | Status der Anfrage. |
 
 # Bestellzahlen
 
@@ -964,10 +965,10 @@ curl "https://[SERVER]/api/bestellzahlen?von=[VON]&bis=[BIS]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-von | &#x2611; | string | Format '2099-01-31'
-bis | | string | Format '2099-12-31' 
+| Parameter | Erforderlich | Datentyp | Beschreibung        |
+| --------- | :----------: | -------- | ------------------- |
+| von       |   &#x2611;   | string   | Format '2099-01-31' |
+| bis       |              | string   | Format '2099-12-31' |
 
 ### Body-Antwort
 
@@ -975,65 +976,65 @@ array of [Bestellzahlen](#bestellzahlen-2)
 
 ### Bestellzahlen
 
-Parameter | Datentyp | Beschreibung
---------- | ---------| ------------
-datum | string | Datum der Tagesbestellzahlen.
-mandanten | array of [Mandant](#mandant) | Liste an Mandanten und aller Bestellungen.
+| Parameter | Datentyp                     | Beschreibung                               |
+| --------- | ---------------------------- | ------------------------------------------ |
+| datum     | string                       | Datum der Tagesbestellzahlen.              |
+| mandanten | array of [Mandant](#mandant) | Liste an Mandanten und aller Bestellungen. |
 
 ### Mandant
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-bezeichnung | string | Name der Einrichtung.
-menuegruppen | array of [Menuegruppe](#menuegruppe-2) | Menuegruppen, die bestellt wurden. |
+| Parameter    | Datentyp                               | Beschreibung                       |
+| ------------ | -------------------------------------- | ---------------------------------- |
+| bezeichnung  | string                                 | Name der Einrichtung.              |
+| menuegruppen | array of [Menuegruppe](#menuegruppe-2) | Menuegruppen, die bestellt wurden. |
 
 ### Menuegruppe
 
-Parameter | Datentyp | Beschreibung
-| ----------- | -------- | ------------------------------------------------------------ |
-bezeichnung | string | Bezeichnung der Menuegruppe.
-menues | array of [Menue](#menue-2) | Menüs einer Menügruppe, die bestellt wurden.
-final | boolean | Gibt an, ob die Bestellzahlen final sind.
+| Parameter   | Datentyp                   | Beschreibung                                 |
+| ----------- | -------------------------- | -------------------------------------------- |
+| bezeichnung | string                     | Bezeichnung der Menuegruppe.                 |
+| menues      | array of [Menue](#menue-2) | Menüs einer Menügruppe, die bestellt wurden. |
+| final       | boolean                    | Gibt an, ob die Bestellzahlen final sind.    |
 
 ### Menue
 
-Parameter | Datentyp | Beschreibung
-----------| -------- | ------------
-exterenId | string | Externe ID des Menüs, falls vorhanden.
-bezeichnung | string | Bezeichnung des Menüs (erst in nächster MensaMax Version gesetzt, aktuell immer NULL.
-anzahl | number | Anzahl der bestellten Menüs.
-speisenamen | array of string | Namen der Speisen dieses Menüs.
-ausgabeorte | array of [Ausgabeort](#ausgabeort) | Ausgabeorte der Menüs.
+| Parameter   | Datentyp                           | Beschreibung                                                                          |
+| ----------- | ---------------------------------- | ------------------------------------------------------------------------------------- |
+| exterenId   | string                             | Externe ID des Menüs, falls vorhanden.                                                |
+| bezeichnung | string                             | Bezeichnung des Menüs (erst in nächster MensaMax Version gesetzt, aktuell immer NULL. |
+| anzahl      | number                             | Anzahl der bestellten Menüs.                                                          |
+| speisenamen | array of string                    | Namen der Speisen dieses Menüs.                                                       |
+| ausgabeorte | array of [Ausgabeort](#ausgabeort) | Ausgabeorte der Menüs.                                                                |
 
 ### Ausgabeort
 
-Parameter| Datentyp | Beschreibung
--------- | -------- | ------------
-bezeichnung | string | Name des Ausgabeortes.
-anzahl | number | Anzahl der an diesem Ausgabeort bestellten Menüs.
-ausgabeschichten | array of [Ausgabeschicht](#ausgabeschicht) | Ausgabeschichten der Ausgabeorte.
+| Parameter        | Datentyp                                   | Beschreibung                                      |
+| ---------------- | ------------------------------------------ | ------------------------------------------------- |
+| bezeichnung      | string                                     | Name des Ausgabeortes.                            |
+| anzahl           | number                                     | Anzahl der an diesem Ausgabeort bestellten Menüs. |
+| ausgabeschichten | array of [Ausgabeschicht](#ausgabeschicht) | Ausgabeschichten der Ausgabeorte.                 |
 
 ### Ausgabeschicht
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-bezeichnung | string | Bezeichnung der Ausgabeschicht.
-anzahl | number | Anzahl der in dieser Schicht ausgegebenen Menüs.
-zubereitungsmerkmale | array of [Zubereitungsmerkmal](#zubereitungsmerkmal) | Zubereitungsmerkmale (z.B. Allergie, ...).
+| Parameter            | Datentyp                                             | Beschreibung                                     |
+| -------------------- | ---------------------------------------------------- | ------------------------------------------------ |
+| bezeichnung          | string                                               | Bezeichnung der Ausgabeschicht.                  |
+| anzahl               | number                                               | Anzahl der in dieser Schicht ausgegebenen Menüs. |
+| zubereitungsmerkmale | array of [Zubereitungsmerkmal](#zubereitungsmerkmal) | Zubereitungsmerkmale (z.B. Allergie, ...).       |
 
 ### Zubereitungsmerkmal
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-bezeichnung | string | Bezeichnung des Zubereitungsmerkmals.
-anzahl | number | Anzahl der Menüs in dieser Schicht mit diesem Zubereitungsmerkmal.
+| Parameter   | Datentyp | Beschreibung                                                       |
+| ----------- | -------- | ------------------------------------------------------------------ |
+| bezeichnung | string   | Bezeichnung des Zubereitungsmerkmals.                              |
+| anzahl      | number   | Anzahl der Menüs in dieser Schicht mit diesem Zubereitungsmerkmal. |
 
 # Person
 
 ## Person erstellen
 
 Dieser Endpunkt erstellt eine Person für den angegebenen Mandanten und gibt die ID der erstellten Person zurück.
-  
+
 ```shell
 curl "https://[SERVER]/api/person?mandantName=[MANDANTNAME]"
   --request POST
@@ -1063,51 +1064,51 @@ curl "https://[SERVER]/api/person?mandantName=[MANDANTNAME]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-mandantName | &#x2611; | Mandantname, für den die Person erstellt werden soll.
+| Parameter   | Erforderlich | Beschreibung                                          |
+| ----------- | :----------: | ----------------------------------------------------- |
+| mandantName |   &#x2611;   | Mandantname, für den die Person erstellt werden soll. |
 
 ### Body-Parameter
 
 ### Person
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-| id | &#x2611; (beim Ändern) | number | ID der Person. Wird beim Erstellen einer Person weggelassen. Muss beim Ändern einer Person angegeben werden.
-| vorname | &#x2611; | string | Vorname der Person.
-| name | &#x2611; | string | Name der Person.
-| geburtsdatum | | string | Geburtsdatum der Person.
-| loginname | | string | Benutzername. Wenn NULL oder nicht angegeben, dann wird der Loginname automatisch generiert.
-| telefon | | string | Telefonnummer der Person.
-| handy | | string | Handynummer der Person.
-| fax | | string | Faxnummer der Person.
-| email | | string | E-Mail Adresse der Person.
-| standardausgabeort | | string | Bezeichnung des Ausgabeortes. Es wird keine Änderung vorgenommen, wenn der Ausgabeort nicht existiert.
-| bestellregeln | | array of [Bestellregel](#bestellregel) | Bei Angabe von Bestellregeln muss ein Standardausgabeort übergeben werden, der in Regeln definiert ist.
-| anrede | | [Anrede](#anrede) | Anrede der Person.
-| preiskategorien | | array of [Preiskategorie](#preiskategorie) | Beim Weglassen werden Standardpreiskategorien angelegt.
-| adresse | | [Adresse](#adresse) | Adresse der Person.
-| nummern | | [Nummer](#nummer) | Sammlung an Nummern.
-| klasse | | [Klasse](#klasse) | Klasse oder Abteilung der Person.
-| einrichtung | | [Einrichtung](#einrichtung) | Einrichtung der Person.
-| identifikation | | array of [Identifikation](#identifikation) | Liste aller Identifikationen.
-| setInitialPasswort | | boolean | Gibt an, ob ein Initialpasswort für die Person erzeugt werden soll. Standardwert: True.
-| aktivAb | | string | Das Datum ab wann die Person aktiv ist und Bestellungen vornehmen darf. Bei nicht Angabe aktiv ab heute.
+| Parameter          |      Erforderlich      | Datentyp                                   | Beschreibung                                                                                                 |
+| ------------------ | :--------------------: | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| id                 | &#x2611; (beim Ändern) | number                                     | ID der Person. Wird beim Erstellen einer Person weggelassen. Muss beim Ändern einer Person angegeben werden. |
+| vorname            |        &#x2611;        | string                                     | Vorname der Person.                                                                                          |
+| name               |        &#x2611;        | string                                     | Name der Person.                                                                                             |
+| geburtsdatum       |                        | string                                     | Geburtsdatum der Person.                                                                                     |
+| loginname          |                        | string                                     | Benutzername. Wenn NULL oder nicht angegeben, dann wird der Loginname automatisch generiert.                 |
+| telefon            |                        | string                                     | Telefonnummer der Person.                                                                                    |
+| handy              |                        | string                                     | Handynummer der Person.                                                                                      |
+| fax                |                        | string                                     | Faxnummer der Person.                                                                                        |
+| email              |                        | string                                     | E-Mail Adresse der Person.                                                                                   |
+| standardausgabeort |                        | string                                     | Bezeichnung des Ausgabeortes. Es wird keine Änderung vorgenommen, wenn der Ausgabeort nicht existiert.       |
+| bestellregeln      |                        | array of [Bestellregel](#bestellregel)     | Bei Angabe von Bestellregeln muss ein Standardausgabeort übergeben werden, der in Regeln definiert ist.      |
+| anrede             |                        | [Anrede](#anrede)                          | Anrede der Person.                                                                                           |
+| preiskategorien    |                        | array of [Preiskategorie](#preiskategorie) | Beim Weglassen werden Standardpreiskategorien angelegt.                                                      |
+| adresse            |                        | [Adresse](#adresse)                        | Adresse der Person.                                                                                          |
+| nummern            |                        | [Nummer](#nummer)                          | Sammlung an Nummern.                                                                                         |
+| klasse             |                        | [Klasse](#klasse)                          | Klasse oder Abteilung der Person.                                                                            |
+| einrichtung        |                        | [Einrichtung](#einrichtung)                | Einrichtung der Person.                                                                                      |
+| identifikation     |                        | array of [Identifikation](#identifikation) | Liste aller Identifikationen.                                                                                |
+| setInitialPasswort |                        | boolean                                    | Gibt an, ob ein Initialpasswort für die Person erzeugt werden soll. Standardwert: True.                      |
+| aktivAb            |                        | string                                     | Das Datum ab wann die Person aktiv ist und Bestellungen vornehmen darf. Bei nicht Angabe aktiv ab heute.     |
 
 ### Bestellregel
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-regelId | &#x2611; | string | Regel ID.
-value | &#x2611; | string | Regel Wert.
+| Parameter | Erforderlich | Datentyp | Beschreibung |
+| --------- | :----------: | -------- | ------------ |
+| regelId   |   &#x2611;   | string   | Regel ID.    |
+| value     |   &#x2611;   | string   | Regel Wert.  |
 
 ### Preiskategorie
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-day | &#x2611; | number | Wochentag (0 .. 7)
-bezeichnung | | string | Wenn die Preiskategorie nicht existiert, wird die Standardpreiskategorie verwendet.
-von | | string | Gültigkeitsbeginn. Bei nicht Angabe gültig ab heute.
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                                                        |
+| ----------- | :----------: | -------- | ----------------------------------------------------------------------------------- |
+| day         |   &#x2611;   | number   | Wochentag (0 .. 7)                                                                  |
+| bezeichnung |              | string   | Wenn die Preiskategorie nicht existiert, wird die Standardpreiskategorie verwendet. |
+| von         |              | string   | Gültigkeitsbeginn. Bei nicht Angabe gültig ab heute.                                |
 
 <aside class="notice">
 Wochentage:
@@ -1124,12 +1125,12 @@ Wochentage:
 
 ### Anrede
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-bezeichnung | &#x2611; | string | Bezeichnung der Anrede.
-briefanrede | &#x2611; | string | Briefanrede, zur verwendung in Serienbriefen.
-geschlecht | &#x2611; | number | Geschlecht der Person (0..3, 100).
-schluessel | | string | Schlüssel der Anrede.
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                  |
+| ----------- | :----------: | -------- | --------------------------------------------- |
+| bezeichnung |   &#x2611;   | string   | Bezeichnung der Anrede.                       |
+| briefanrede |   &#x2611;   | string   | Briefanrede, zur verwendung in Serienbriefen. |
+| geschlecht  |   &#x2611;   | number   | Geschlecht der Person (0..3, 100).            |
+| schluessel  |              | string   | Schlüssel der Anrede.                         |
 
 <aside class="notice">
 Geschlecht:
@@ -1144,43 +1145,43 @@ Geschlecht:
 
 ### Adresse
 
-Parameter | Erfoderlich | Datentyp | Beschreibung
---------- | :---------: | -------- | ------------
-strasse | | string | Straße
-hausNr | | string | Hausnummer
-hausNrZusatz | | string | Hausnummernzusatz
-plz | | string | Postleitzahl
-ort | | string | Ort
-ortsteil | | string | Ortsteil
+| Parameter    | Erfoderlich | Datentyp | Beschreibung      |
+| ------------ | :---------: | -------- | ----------------- |
+| strasse      |             | string   | Straße            |
+| hausNr       |             | string   | Hausnummer        |
+| hausNrZusatz |             | string   | Hausnummernzusatz |
+| plz          |             | string   | Postleitzahl      |
+| ort          |             | string   | Ort               |
+| ortsteil     |             | string   | Ortsteil          |
 
 ### Nummer
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-personalnummer | | string | Personalnummer
-kundennummer | | string | Kundennummer
-objektnummer | | string | Objektnummer
-steuernummer | | string | Steuernummer
-kennziffer | | string | Kennziffer
+| Parameter      | Erforderlich | Datentyp | Beschreibung   |
+| -------------- | :----------: | -------- | -------------- |
+| personalnummer |              | string   | Personalnummer |
+| kundennummer   |              | string   | Kundennummer   |
+| objektnummer   |              | string   | Objektnummer   |
+| steuernummer   |              | string   | Steuernummer   |
+| kennziffer     |              | string   | Kennziffer     |
 
 ### Klasse
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-bezeichnung | | string | Bezeichnung der Klasse.
+| Parameter   | Erforderlich | Datentyp | Beschreibung            |
+| ----------- | :----------: | -------- | ----------------------- |
+| bezeichnung |              | string   | Bezeichnung der Klasse. |
 
 ### Einrichtung
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-bezeichnung | | string | Bezeichnung der Einrichtung. Wenn die Einrichtung mit dieser Bezeichnung in MensaMax nicht vorhanden ist, wird sie für den Mandanten angelegt.
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                                                                                                                   |
+| ----------- | :----------: | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| bezeichnung |              | string   | Bezeichnung der Einrichtung. Wenn die Einrichtung mit dieser Bezeichnung in MensaMax nicht vorhanden ist, wird sie für den Mandanten angelegt. |
 
 ### Identifikation
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-typ | &#x2611; | number | Typ der Identifikation (1..5).
-value | &#x2611; | string | Wert der Identifikation.
+| Parameter | Erforderlich | Datentyp | Beschreibung                   |
+| --------- | :----------: | -------- | ------------------------------ |
+| typ       |   &#x2611;   | number   | Typ der Identifikation (1..5). |
+| value     |   &#x2611;   | string   | Wert der Identifikation.       |
 
 <aside class="notice" id="identifikation-typ">
 Identifikation Typ:
@@ -1195,9 +1196,9 @@ Identifikation Typ:
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
- | number | ID der Person.
+| Parameter | Datentyp       | Beschreibung |
+| --------- | -------------- | ------------ |
+| number    | ID der Person. |
 
 ## Person suchen
 
@@ -1326,24 +1327,24 @@ curl "https://[SERVER]/api/person/search"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-mandantName | &#x2611; | Einschränkung der Suche auf Personen, die diesem Mandanten zugeordnet sind.
+| Parameter   | Erforderlich | Beschreibung                                                                |
+| ----------- | :----------: | --------------------------------------------------------------------------- |
+| mandantName |   &#x2611;   | Einschränkung der Suche auf Personen, die diesem Mandanten zugeordnet sind. |
 
 ### Body-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-name | | string | Nachname der Person.
-vorname | | Vorname der Person.
-geburtsdatum | | string | Geburtsdatum der Person.
-loginname | | string | Login der Person.
-personalnummer | | string | Personalnummer der Person.
-kundennummer | | string | Kundennummer der Person.
-objektnummer | | string | Objektnummer der Person.
-steuernummer | | string | Steuernummer der Person.
-kennziffer | | string | Kennziffer der Person.
-klasse | | string | Klasse der Person.
+| Parameter      | Erforderlich | Datentyp            | Beschreibung               |
+| -------------- | :----------: | ------------------- | -------------------------- |
+| name           |              | string              | Nachname der Person.       |
+| vorname        |              | Vorname der Person. |
+| geburtsdatum   |              | string              | Geburtsdatum der Person.   |
+| loginname      |              | string              | Login der Person.          |
+| personalnummer |              | string              | Personalnummer der Person. |
+| kundennummer   |              | string              | Kundennummer der Person.   |
+| objektnummer   |              | string              | Objektnummer der Person.   |
+| steuernummer   |              | string              | Steuernummer der Person.   |
+| kennziffer     |              | string              | Kennziffer der Person.     |
+| klasse         |              | string              | Klasse der Person.         |
 
 <aside class="notice">
 Alle Body-Parameter sind optional und können kombiniert werden.
@@ -1390,9 +1391,9 @@ curl "https://[SERVER]/api/person?mandantName=[MANDANTNAME]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-mandantName | &#x2611; | Mandantname, für den die Person geändert werden soll.
+| Parameter   | Erforderlich | Beschreibung                                          |
+| ----------- | :----------: | ----------------------------------------------------- |
+| mandantName |   &#x2611;   | Mandantname, für den die Person geändert werden soll. |
 
 ### Body-Parameter
 
@@ -1400,9 +1401,9 @@ Datenstruktur einer [Person](#person-2).
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
- | number | ID der Person.
+| Parameter | Datentyp       | Beschreibung |
+| --------- | -------------- | ------------ |
+| number    | ID der Person. |
 
 ## Person inaktiv setzen
 
@@ -1431,16 +1432,16 @@ curl "https://[SERVER]/api/person/[ID]/deactivate"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-id | &#x2611; | ID der Person.
-mandantName | &#x2611; | Mandantname, für den die Person inaktiv gesetzt werden soll.
+| Parameter   | Erforderlich | Beschreibung                                                 |
+| ----------- | :----------: | ------------------------------------------------------------ |
+| id          |   &#x2611;   | ID der Person.                                               |
+| mandantName |   &#x2611;   | Mandantname, für den die Person inaktiv gesetzt werden soll. |
 
 ### Body-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-deactivationDate | | string | Das Datum, zu dem die Person auf inaktiv gesetzt werden soll.
+| Parameter        | Erforderlich | Datentyp | Beschreibung                                                  |
+| ---------------- | :----------: | -------- | ------------------------------------------------------------- |
+| deactivationDate |              | string   | Das Datum, zu dem die Person auf inaktiv gesetzt werden soll. |
 
 <aside class="notice">
 Das Datum darf nicht in der Vergangenheit liegen, eine Person kann also nicht rückwirkend inaktiv gesetzt werden.
@@ -1467,10 +1468,10 @@ curl "https://[SERVER]/api/person/[ID]/activate?mandantName=[MANDANTNAME]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-id | &#x2611; | ID der Person.
-mandantName | &#x2611; | Mandantname, für den die Person aktiv gesetzt werden soll.
+| Parameter   | Erforderlich | Beschreibung                                               |
+| ----------- | :----------: | ---------------------------------------------------------- |
+| id          |   &#x2611;   | ID der Person.                                             |
+| mandantName |   &#x2611;   | Mandantname, für den die Person aktiv gesetzt werden soll. |
 
 ## Person löschen
 
@@ -1492,9 +1493,9 @@ curl "https://[SERVER]/api/person/[ID]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-id | &#x2611; | ID der Person, die gelöscht werden soll.
+| Parameter | Erforderlich | Beschreibung                             |
+| --------- | :----------: | ---------------------------------------- |
+| id        |   &#x2611;   | ID der Person, die gelöscht werden soll. |
 
 ## Ein Bild zu einer Person hochladen
 
@@ -1535,9 +1536,9 @@ $response | ConvertTo-Json
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-personId | &#x2611; | ID der Person.
+| Parameter | Erforderlich | Beschreibung   |
+| --------- | :----------: | -------------- |
+| personId  |   &#x2611;   | ID der Person. |
 
 ## Personenbestellungen
 
@@ -1551,6 +1552,7 @@ curl "https://[SERVER]/api/person/bestellungen?mandantName=[MANDANTNAME]&datum=[
 ```
 
 ```json--request
+
 ```
 
 ```json--response
@@ -1590,45 +1592,45 @@ curl "https://[SERVER]/api/person/bestellungen?mandantName=[MANDANTNAME]&datum=[
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-mandantName | &#x2611; | Mandantname.
-datum | &#x2611; | Tag der Bestellungen.
+| Parameter   | Erforderlich | Beschreibung          |
+| ----------- | :----------: | --------------------- |
+| mandantName |   &#x2611;   | Mandantname.          |
+| datum       |   &#x2611;   | Tag der Bestellungen. |
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-anzahlPersonen | number | Anzahl der Personen mit Bestellungen an diesem Tag.
-personen | array of [Personenbestellung] (#personenbestellung) | Bestellungdetails einer Person.
+| Parameter      | Datentyp                                            | Beschreibung                                        |
+| -------------- | --------------------------------------------------- | --------------------------------------------------- |
+| anzahlPersonen | number                                              | Anzahl der Personen mit Bestellungen an diesem Tag. |
+| personen       | array of [Personenbestellung] (#personenbestellung) | Bestellungdetails einer Person.                     |
 
 ### Personenbestellung
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-person | [Person](#person-3) | Details zur Person im Bestellkontext.
-anzahlBestellungen | number | Anzahl der Bestellungen dieser Person.
-bestellungen | array of [Bestellung](#bestellung) | Liste der Bestellungen dieser Person.
+| Parameter          | Datentyp                           | Beschreibung                           |
+| ------------------ | ---------------------------------- | -------------------------------------- |
+| person             | [Person](#person-3)                | Details zur Person im Bestellkontext.  |
+| anzahlBestellungen | number                             | Anzahl der Bestellungen dieser Person. |
+| bestellungen       | array of [Bestellung](#bestellung) | Liste der Bestellungen dieser Person.  |
 
 ### Person (Bestellkontext)
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-id | number | ID der Person.
-vorname | string | Vorname der Person.
-nachname | string | Nachname der Person.
-loginname | string | Loginname der Person.
-einrichtung | string | Einrichtung der Person.
+| Parameter   | Datentyp | Beschreibung            |
+| ----------- | -------- | ----------------------- |
+| id          | number   | ID der Person.          |
+| vorname     | string   | Vorname der Person.     |
+| nachname    | string   | Nachname der Person.    |
+| loginname   | string   | Loginname der Person.   |
+| einrichtung | string   | Einrichtung der Person. |
 
 ### Bestellung
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-bezeichnung | string | Bezeichnung der Bestellung.
-bestelldatum | string | Datum der Bestellung.
-preiskategorie | string | Preiskategorie der Bestellung.
-anzahl | number | Bestellanzahl.
-kommentar | string | Ein Kommentar zur Bestellung.
+| Parameter      | Datentyp | Beschreibung                   |
+| -------------- | -------- | ------------------------------ |
+| bezeichnung    | string   | Bezeichnung der Bestellung.    |
+| bestelldatum   | string   | Datum der Bestellung.          |
+| preiskategorie | string   | Preiskategorie der Bestellung. |
+| anzahl         | number   | Bestellanzahl.                 |
+| kommentar      | string   | Ein Kommentar zur Bestellung.  |
 
 ## Personen ohne Bestellung
 
@@ -1642,6 +1644,7 @@ curl "https://[SERVER]/api/person/ohneBestellung?mandantName=[MANDANTNAME]&datum
 ```
 
 ```json--request
+
 ```
 
 ```json--response
@@ -1669,17 +1672,17 @@ curl "https://[SERVER]/api/person/ohneBestellung?mandantName=[MANDANTNAME]&datum
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-mandantName | &#x2611; | Mandantname.
-datum | &#x2611; | Tag der Bestellungen.
+| Parameter   | Erforderlich | Beschreibung          |
+| ----------- | :----------: | --------------------- |
+| mandantName |   &#x2611;   | Mandantname.          |
+| datum       |   &#x2611;   | Tag der Bestellungen. |
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-anzahl | number | Anzahl der Personen ohne Bestellung an diesem Tag.
-personen | array of [Person] (#person-3) | Details zur Person im Bestellkontext.
+| Parameter | Datentyp                      | Beschreibung                                       |
+| --------- | ----------------------------- | -------------------------------------------------- |
+| anzahl    | number                        | Anzahl der Personen ohne Bestellung an diesem Tag. |
+| personen  | array of [Person] (#person-3) | Details zur Person im Bestellkontext.              |
 
 # Klassenstufe
 
@@ -1689,9 +1692,9 @@ personen | array of [Person] (#person-3) | Details zur Person im Bestellkontext.
 
 ```shell
 curl "https://[SERVER]/api/klassenstufe"
-  --request POST 
-  --header "Authorization: Bearer [API-KEY]" 
-  --header "Content-Type: application/json" 
+  --request POST
+  --header "Authorization: Bearer [API-KEY]"
+  --header "Content-Type: application/json"
   --data '{"bezeichnung":"Neue Klassenstufe","reihenfolge":1}'
 ```
 
@@ -1720,20 +1723,20 @@ curl "https://[SERVER]/api/klassenstufe"
 
 ### Body-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: |--------- | ------------
-bezeichnung |  &#x2611; | string | Bezeichnung für die Klassenstufe.
-reihenfolge |  &#x2611; | number | Reihenfolge für die Klassenstufe.
+| Parameter   | Erforderlich | Datentyp | Beschreibung                      |
+| ----------- | :----------: | -------- | --------------------------------- |
+| bezeichnung |   &#x2611;   | string   | Bezeichnung für die Klassenstufe. |
+| reihenfolge |   &#x2611;   | number   | Reihenfolge für die Klassenstufe. |
 
 ### Body-Antwort
 
 ### Klassenstufe
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-id | number | ID der neu erstellten Klassenstufe.
-bezeichnung | string | Bezeichnung der Klassenstufe.
-reihenfolge | string | Reihenfolge der Klassenstufe.
+| Parameter   | Datentyp | Beschreibung                        |
+| ----------- | -------- | ----------------------------------- |
+| id          | number   | ID der neu erstellten Klassenstufe. |
+| bezeichnung | string   | Bezeichnung der Klassenstufe.       |
+| reihenfolge | string   | Reihenfolge der Klassenstufe.       |
 
 ## Klassenstufen abrufen
 
@@ -1769,10 +1772,10 @@ curl "https://[SERVER]/api/klassenstufen"
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-anzahl | number | Anzahl der Klassenstufen.
- | array of [Klassenstufe](#klassenstufe-2) | Liste der Klassenstufen.
+| Parameter                                | Datentyp                 | Beschreibung              |
+| ---------------------------------------- | ------------------------ | ------------------------- |
+| anzahl                                   | number                   | Anzahl der Klassenstufen. |
+| array of [Klassenstufe](#klassenstufe-2) | Liste der Klassenstufen. |
 
 ```shell
 curl "https://[SERVER]/api/klassenstufe/1"
@@ -1798,15 +1801,15 @@ curl "https://[SERVER]/api/klassenstufe/1"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-id | &#x2611; | ID der Klassenstufe.
+| Parameter | Erforderlich | Beschreibung         |
+| --------- | :----------: | -------------------- |
+| id        |   &#x2611;   | ID der Klassenstufe. |
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
- | [Klassenstufe](#klassenstufe-2) | Eine bestimmte Klassenstufe.
+| Parameter                       | Datentyp                     | Beschreibung |
+| ------------------------------- | ---------------------------- | ------------ |
+| [Klassenstufe](#klassenstufe-2) | Eine bestimmte Klassenstufe. |
 
 ## Klassenstufe ändern
 
@@ -1836,11 +1839,11 @@ curl "https://[SERVER]/api/klassenstufe"
 
 ### Body-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ---------
-id |  &#x2611; | number | ID der Klassenstufe.
-bezeichnung | &#x2611; | Bezeichnung der Klassenstufe.
-reihenfolge |  &#x2611; | Reihenfolge der Klassenstufe.
+| Parameter   | Erforderlich | Datentyp                      | Beschreibung         |
+| ----------- | :----------: | ----------------------------- | -------------------- |
+| id          |   &#x2611;   | number                        | ID der Klassenstufe. |
+| bezeichnung |   &#x2611;   | Bezeichnung der Klassenstufe. |
+| reihenfolge |   &#x2611;   | Reihenfolge der Klassenstufe. |
 
 ## Klassenstufe löschen
 
@@ -1862,9 +1865,9 @@ curl "https://[SERVER]/api/klassenstufe/[ID]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-id | &#x2611; | ID der Klassenstufe.
+| Parameter | Erforderlich | Beschreibung         |
+| --------- | :----------: | -------------------- |
+| id        |   &#x2611;   | ID der Klassenstufe. |
 
 # Klasse
 
@@ -1909,24 +1912,24 @@ curl "https://[SERVER]/api/klasse"
 
 ### Body-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ---------
-bezeichnung |  &#x2611; | string | Bezeichnung der Klasse.
-rang | &#x2611; | number | Rang der Klasse
-folgeklasseId | | number | ID der Folgeklasse.
-klassenstufeId | &#x2611; | number | ID der Klassenstufe.
+| Parameter      | Erforderlich | Datentyp | Beschreibung            |
+| -------------- | :----------: | -------- | ----------------------- |
+| bezeichnung    |   &#x2611;   | string   | Bezeichnung der Klasse. |
+| rang           |   &#x2611;   | number   | Rang der Klasse         |
+| folgeklasseId  |              | number   | ID der Folgeklasse.     |
+| klassenstufeId |   &#x2611;   | number   | ID der Klassenstufe.    |
 
 ### Body-Antwort
 
 ### Klasse
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-id | number | ID der Klasse.
-bezeichnung | string | Bezeichnung der Klasse.
-rang | number | Rang der Klasse
-folgeklasseId | number | ID der Folgeklasse.
-klassenstufeId | number | ID der Klassenstufe.
+| Parameter      | Datentyp | Beschreibung            |
+| -------------- | -------- | ----------------------- |
+| id             | number   | ID der Klasse.          |
+| bezeichnung    | string   | Bezeichnung der Klasse. |
+| rang           | number   | Rang der Klasse         |
+| folgeklasseId  | number   | ID der Folgeklasse.     |
+| klassenstufeId | number   | ID der Klassenstufe.    |
 
 ## Klassen abrufen
 
@@ -1964,10 +1967,10 @@ curl "https://[SERVER]/api/klassen"
 
 ### Body-Antwort
 
-Parameter | Datentyp | Beschreibung
---------- | -------- | ------------
-anzahl | number | Anzahl der Klassen.
- | array of [Klasse](#klasse-3) | Liste der Klassen.
+| Parameter                    | Datentyp           | Beschreibung        |
+| ---------------------------- | ------------------ | ------------------- |
+| anzahl                       | number             | Anzahl der Klassen. |
+| array of [Klasse](#klasse-3) | Liste der Klassen. |
 
 ```shell
 curl "https://[SERVER]/api/klasse/1"
@@ -1995,9 +1998,9 @@ curl "https://[SERVER]/api/klasse/1"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ---------
-id | &#x2611; | ID der Klasse.
+| Parameter | Erforderlich | Beschreibung   |
+| --------- | :----------: | -------------- |
+| id        |   &#x2611;   | ID der Klasse. |
 
 ### Body-Antwort
 
@@ -2035,13 +2038,13 @@ curl "https://[SERVER]/api/klasse"
 
 ### Body-Parameter
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ---------
-id | &#x2611; | number | ID der Klasse.
-bezeichnung | &#x2611; | string | Bezeichnung der Klasse.
-rang | &#x2611; | number | Rang der Klasse.
-folgeklasseId | | number | ID der Folgeklasse.
-klassenstufeId | &#x2611; | number | ID der Klassenstufe.
+| Parameter      | Erforderlich | Datentyp | Beschreibung            |
+| -------------- | :----------: | -------- | ----------------------- |
+| id             |   &#x2611;   | number   | ID der Klasse.          |
+| bezeichnung    |   &#x2611;   | string   | Bezeichnung der Klasse. |
+| rang           |   &#x2611;   | number   | Rang der Klasse.        |
+| folgeklasseId  |              | number   | ID der Folgeklasse.     |
+| klassenstufeId |   &#x2611;   | number   | ID der Klassenstufe.    |
 
 ## Klasse löschen
 
@@ -2063,9 +2066,9 @@ curl "https://[SERVER]/api/klasse/[ID]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ---------
-id | &#x2611; | ID der Klasse.
+| Parameter | Erforderlich | Beschreibung   |
+| --------- | :----------: | -------------- |
+| id        |   &#x2611;   | ID der Klasse. |
 
 # Identifikationsmedium
 
@@ -2116,9 +2119,9 @@ curl "https://[SERVER]/api/identifikation?mandantName=[MANDANTNAME]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-mandantName | &#x2611; | Einschränkung der Personen, die diesem Mandanten zugeordnet sind.
+| Parameter   | Erforderlich | Beschreibung                                                      |
+| ----------- | :----------: | ----------------------------------------------------------------- |
+| mandantName |   &#x2611;   | Einschränkung der Personen, die diesem Mandanten zugeordnet sind. |
 
 ### Body-Parameter
 
@@ -2126,18 +2129,18 @@ array of [Identifikation](#identifikation-2)
 
 ### Identifikation
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-personId | &#x2611; | number | ID der Person.
-identifikationsmedium | &#x2611; | array of [Identifikationsmedium](#identifikationsmedium-2)
+| Parameter             | Erforderlich | Datentyp                                                   | Beschreibung   |
+| --------------------- | :----------: | ---------------------------------------------------------- | -------------- |
+| personId              |   &#x2611;   | number                                                     | ID der Person. |
+| identifikationsmedium |   &#x2611;   | array of [Identifikationsmedium](#identifikationsmedium-2) |
 
 ### Identifikationsmedium
 
-Parameter | Erforderlich | Datentyp | Beschreibung
---------- | :----------: | -------- | ------------
-typ | &#x2611; | number | [Identifikationstyp](#identifikation-typ)
-value | &#x2611; | string | Wert der Identifikation.
-datum | | string | Datum des ersten Tages in der Woche.
+| Parameter | Erforderlich | Datentyp | Beschreibung                              |
+| --------- | :----------: | -------- | ----------------------------------------- |
+| typ       |   &#x2611;   | number   | [Identifikationstyp](#identifikation-typ) |
+| value     |   &#x2611;   | string   | Wert der Identifikation.                  |
+| datum     |              | string   | Datum des ersten Tages in der Woche.      |
 
 ## Zurückgeben
 
@@ -2185,9 +2188,9 @@ curl "https://[SERVER]/api/identifikation/deactivate?mandantName=[MANDANTNAME]"
 
 ### Query-Parameter
 
-Parameter | Erforderlich | Beschreibung
---------- | :----------: | ------------
-mandantName | &#x2611; | Einschränkung der Personen, die diesem Mandanten zugeordnet sind.
+| Parameter   | Erforderlich | Beschreibung                                                      |
+| ----------- | :----------: | ----------------------------------------------------------------- |
+| mandantName |   &#x2611;   | Einschränkung der Personen, die diesem Mandanten zugeordnet sind. |
 
 ### Body-Parameter
 
@@ -2195,18 +2198,18 @@ array of [Identifikation](#identifikation-2)
 
 # Server Fehler Antworten
 
-HTTP-Fehlercode | Beschreibung
---------------- | ---------
-400 | Bad Request - Die Anfrage ist nicht valide. Meistens sind die Eingaben fehlerhaft oder fehlen komplett.
-401 | Unauthorized - Der API-Key ist ungültig, abgelaufen oder fehlt in der Anfrage.
-403 | Forbidden - Der Zugriff auf diesen Endpoint ist nicht erlaubt.
-404 | Not Found - Der angefragte Endpoint existiert nicht oder ein Datensatz wurde nicht gefunden.
-405 | Method Not Allowed - Die angegebene HTTP-Methode ist auf diesem Endpunkt nicht erlaubt.
-406 | Not Acceptable - Das angefragte Format ist nicht JSON.
-409 | Conflict - Die Anfrage steht in Konflikt mit dem aktuellen Zustand auf dem Server. Die Antwort enthält Hinweise für die Lösung.
-410 | Gone - Der angefragte Endpoint existiert nicht mehr.
-429 | Too Many Requests - Zu viele Anfragen in kurzer Zeit.
-500 | Internal Server Error - Wir haben auf unseren Servern ein Problem. Bitte später wiederholen.
-503 | Service Unavailable - Wir sind aufgrund von Wartungsarbeiten vorübergehend offline.
+| HTTP-Fehlercode | Beschreibung                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 400             | Bad Request - Die Anfrage ist nicht valide. Meistens sind die Eingaben fehlerhaft oder fehlen komplett.                         |
+| 401             | Unauthorized - Der API-Key ist ungültig, abgelaufen oder fehlt in der Anfrage.                                                  |
+| 403             | Forbidden - Der Zugriff auf diesen Endpoint ist nicht erlaubt.                                                                  |
+| 404             | Not Found - Der angefragte Endpoint existiert nicht oder ein Datensatz wurde nicht gefunden.                                    |
+| 405             | Method Not Allowed - Die angegebene HTTP-Methode ist auf diesem Endpunkt nicht erlaubt.                                         |
+| 406             | Not Acceptable - Das angefragte Format ist nicht JSON.                                                                          |
+| 409             | Conflict - Die Anfrage steht in Konflikt mit dem aktuellen Zustand auf dem Server. Die Antwort enthält Hinweise für die Lösung. |
+| 410             | Gone - Der angefragte Endpoint existiert nicht mehr.                                                                            |
+| 429             | Too Many Requests - Zu viele Anfragen in kurzer Zeit.                                                                           |
+| 500             | Internal Server Error - Wir haben auf unseren Servern ein Problem. Bitte später wiederholen.                                    |
+| 503             | Service Unavailable - Wir sind aufgrund von Wartungsarbeiten vorübergehend offline.                                             |
 
 Teilweise enthalten die Fehler-Antworten des Servers eine genauere Beschreibung im Body um die Fehlersuche so gut wie möglich einzugrenzen.
