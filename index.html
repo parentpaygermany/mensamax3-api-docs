@@ -347,7 +347,7 @@
       </div>
         <ul class="toc-footer">
             <li><a href='https://mensamax.de'>MensaMax</a></li>
-            <li><style>.toc-wrapper .logo { padding: 20px; margin-left: auto; margin-right: auto; } .http-status-code { padding: 5px; background-color: white; }</style></li>
+            <li><style>.toc-wrapper .logo { padding: 20px; margin-left: auto; margin-right: auto; height: 10em; border-radius: 50%;} .http-status-code { padding: 5px; background-color: white; }</style></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -375,6 +375,7 @@
 Der Platzhalter <code>[API-KEY]</code> muss mit dem persönlichen API-Key ersetzt werden.
 
 Alle Projekt spezifischen Werte sind in dieser Dokumentation <code>[zwischen eckigen Klammern]</code> dargestellt. Diese Werte dienen als Platzhalter und müssen entsprechend ersetzt werden.
+
 </aside>
 
 <aside class="warning">
@@ -439,9 +440,9 @@ cURL Anfragen werden ohne Zeilenümbrüche ausgeführt. Es gibt Sonderzeichen um
 </tr>
 </thead><tbody>
 <tr>
-<td></td>
 <td>string</td>
 <td>API-Key</td>
+<td></td>
 </tr>
 </tbody></table>
 <h1 id='api-status'>API Status</h1><h2 id='api-zustand'>API Zustand</h2>
@@ -1316,9 +1317,9 @@ Zusatzstoffe und Allergene mit der selben Kennung sind nicht zulässig.
 </tr>
 </thead><tbody>
 <tr>
-<td></td>
 <td>string</td>
 <td>Status der Anfrage.</td>
+<td></td>
 </tr>
 </tbody></table>
 <h1 id='bestellzahlen'>Bestellzahlen</h1><h2 id='bestellzahlen-abrufen'>Bestellzahlen abrufen</h2>
@@ -2129,9 +2130,9 @@ Identifikation Typ:
 </tr>
 </thead><tbody>
 <tr>
-<td></td>
 <td>number</td>
 <td>ID der Person.</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='person-suchen'>Person suchen</h2>
@@ -2377,9 +2378,9 @@ Wichtig hierbei ist die ID der Person.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td></td>
 <td>number</td>
 <td>ID der Person.</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='person-inaktiv-setzen'>Person inaktiv setzen</h2>
@@ -2530,7 +2531,8 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
   --request GET
   --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
   --header <span class="s2">"Content-Type: application/json"</span>
-</code></pre><pre class="highlight json tab-json--request"><code></code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+</code></pre><pre class="highlight json tab-json--request"><code><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"anzahlPersonen"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"personen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -2693,7 +2695,8 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
   --request GET
   --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
   --header <span class="s2">"Content-Type: application/json"</span>
-</code></pre><pre class="highlight json tab-json--request"><code></code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
+</code></pre><pre class="highlight json tab-json--request"><code><span class="w">
+</span></code></pre><pre class="highlight json tab-json--response"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"anzahlPersonen"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"personen"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -2749,9 +2752,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
 <h1 id='klassenstufe'>Klassenstufe</h1><h2 id='klassenstufe-erstellen'>Klassenstufe erstellen</h2>
 <p>Über diesen Endpunkt kann eine Klassenstufe erstellt werden.</p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassenstufe"</span>
-  --request POST 
-  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span> 
-  --header <span class="s2">"Content-Type: application/json"</span> 
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+  --header <span class="s2">"Content-Type: application/json"</span>
   --data <span class="s1">'{"bezeichnung":"Neue Klassenstufe","reihenfolge":1}'</span>
 </code></pre><pre class="highlight json tab-json--request"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"bezeichnung"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neue Klassenstufe"</span><span class="p">,</span><span class="w">
@@ -2844,9 +2847,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
 <td>Anzahl der Klassenstufen.</td>
 </tr>
 <tr>
-<td></td>
 <td>array of <a href="#klassenstufe-2">Klassenstufe</a></td>
 <td>Liste der Klassenstufen.</td>
+<td></td>
 </tr>
 </tbody></table>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassenstufe/1"</span>
@@ -2883,9 +2886,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
 </tr>
 </thead><tbody>
 <tr>
-<td></td>
 <td><a href="#klassenstufe-2">Klassenstufe</a></td>
 <td>Eine bestimmte Klassenstufe.</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='klassenstufe-andern'>Klassenstufe ändern</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klassenstufe"</span>
@@ -3077,9 +3080,9 @@ Ein weiterer Endpunkt ruft eine bestimmte Klasse ab.</p>
 <td>Anzahl der Klassen.</td>
 </tr>
 <tr>
-<td></td>
 <td>array of <a href="#klasse-3">Klasse</a></td>
 <td>Liste der Klassen.</td>
+<td></td>
 </tr>
 </tbody></table>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/klasse/1"</span>
