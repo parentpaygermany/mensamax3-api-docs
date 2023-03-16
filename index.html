@@ -1805,7 +1805,7 @@ Die Bezeichnungen für Ausgabeschichten, -orte und Zubereitungsmerkmale können 
 <td>bestellregeln</td>
 <td style="text-align: center"></td>
 <td>array of <a href="#bestellregel">Bestellregel</a></td>
-<td>Bei Angabe von Bestellregeln muss ein Standardausgabeort übergeben werden, der in Regeln definiert ist.</td>
+<td>Über die Bestellregeln können unterschiedliche Elemente weitergegeben werden, die sich auf die Bestellmöglichkeiten des Teilnehmers auswirken.</td>
 </tr>
 <tr>
 <td>anrede</td>
@@ -1884,6 +1884,18 @@ Die Bezeichnungen für Ausgabeschichten, -orte und Zubereitungsmerkmale können 
 <td>Regel Wert.</td>
 </tr>
 </tbody></table>
+
+<p>Derzeit können nur die für den Teilnehmer zur Verfügung stehenden Ausgabeorte angegeben werden.</p>
+
+<p>Für die Ausgabeorte gilt:</p>
+
+<ul>
+<li><p>Wenn die <strong>Bestellregeln</strong> übergeben werden, muss immer auch der <strong>Standardausgabeort</strong> übergeben werden</p></li>
+<li><p>regelId: Ausgabeort (der Wert ist fix)</p></li>
+<li><p>value: Der Name des Ausgabeortes</p></li>
+</ul>
+
+<p>Dieser Ausgabeort muss in MensaMax in den Stammdaten angelegt sein. Hier erfolgt nur die Zuordnungn zum Teilnehmer.</p>
 <h3 id='preiskategorie'>Preiskategorie</h3>
 <table><thead>
 <tr>
