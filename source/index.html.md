@@ -1084,7 +1084,7 @@ curl "https://[SERVER]/api/person?mandantName=[MANDANTNAME]"
 | fax                |                        | string                                     | Faxnummer der Person.                                                                                        |
 | email              |                        | string                                     | E-Mail Adresse der Person.                                                                                   |
 | standardausgabeort |                        | string                                     | Bezeichnung des Ausgabeortes. Es wird keine Änderung vorgenommen, wenn der Ausgabeort nicht existiert.       |
-| bestellregeln      |                        | array of [Bestellregel](#bestellregel)     | Bei Angabe von Bestellregeln muss ein Standardausgabeort übergeben werden, der in Regeln definiert ist.      |
+| bestellregeln      |                        | array of [Bestellregel](#bestellregel)     | Über die Bestellregeln können unterschiedliche Elemente weitergegeben werden, die sich auf die Bestellmöglichkeiten des Teilnehmers auswirken.|
 | anrede             |                        | [Anrede](#anrede)                          | Anrede der Person.                                                                                           |
 | preiskategorien    |                        | array of [Preiskategorie](#preiskategorie) | Beim Weglassen werden Standardpreiskategorien angelegt.                                                      |
 | adresse            |                        | [Adresse](#adresse)                        | Adresse der Person.                                                                                          |
@@ -1101,6 +1101,18 @@ curl "https://[SERVER]/api/person?mandantName=[MANDANTNAME]"
 | --------- | :----------: | -------- | ------------ |
 | regelId   |   &#x2611;   | string   | Regel ID.    |
 | value     |   &#x2611;   | string   | Regel Wert.  |
+
+Derzeit können nur die für den Teilnehmer zur Verfügung stehenden Ausgabeorte angegeben werden.
+
+Für die Ausgabeorte gilt:
+
+* Wenn die **Bestellregeln** übergeben werden, muss immer auch der **Standardausgabeort** übergeben werden
+
+* regelId: Ausgabeort (der Wert ist fix)
+
+* value: Der Name des Ausgabeortes
+
+Dieser Ausgabeort muss in MensaMax in den Stammdaten angelegt sein. Hier erfolgt nur die Zuordnungn zum Teilnehmer.
 
 ### Preiskategorie
 
