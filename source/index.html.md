@@ -1112,7 +1112,7 @@ Für die Ausgabeorte gilt:
 
 * value: Der Name des Ausgabeortes
 
-Dieser Ausgabeort muss in MensaMax in den Stammdaten angelegt sein. Hier erfolgt nur die Zuordnungn zum Teilnehmer.
+Dieser Ausgabeort muss in MensaMax in den Stammdaten angelegt sein. Hier erfolgt nur die Zuordnung zum Teilnehmer.
 
 ### Preiskategorie
 
