@@ -12,3 +12,5 @@ docker-compose exec docs bundle exec middleman build
 ```
 
 Die Build-Ausgabe sollte dann in `./build` liegen, der ganze Ordner kann dann deployed werden.
+
+
