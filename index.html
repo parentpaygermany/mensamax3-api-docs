@@ -286,6 +286,9 @@
                     <a href="#person-loschen" class="toc-h2 toc-link" data-title="Person">Person löschen</a>
                   </li>
                   <li>
+                    <a href="#person-umziehen" class="toc-h2 toc-link" data-title="Person">Person umziehen</a>
+                  </li>
+                  <li>
                     <a href="#ein-bild-zu-einer-person-hochladen" class="toc-h2 toc-link" data-title="Person">Ein Bild zu einer Person hochladen</a>
                   </li>
                   <li>
@@ -2496,6 +2499,49 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
 <td>ID der Person, die gelöscht werden soll.</td>
 </tr>
 </tbody></table>
+<h2 id='person-umziehen'>Person umziehen</h2>
+<p>Über diesen Endpunkt kann eine Person umgezogen werden.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://[SERVER]/api/person/umzug?mandantName=[MANDANTNAME]"</span>
+  --request POST
+  --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
+</code></pre><h3 id='http-anfrage-12'>HTTP-Anfrage</h3>
+<p><code>POST https://[SERVER]/api/person/umzug?mandantName=[MANDANTNAME]</code></p>
+<h3 id='query-parameter-10'>Query-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mandantName</td>
+<td style="text-align: center">&#x2611;</td>
+<td>Mandantname, für den die Person ein Umzug durchgeführt werden soll.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameter-7'>Body-Parameter</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align: center">Erforderlich</th>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>personId</td>
+<td style="text-align: center">&#x2611;</td>
+<td>number</td>
+<td>ID der Person.</td>
+</tr>
+<tr>
+<td>newMandant</td>
+<td style="text-align: center">&#x2611;</td>
+<td>string</td>
+<td>Name des neuen Mandant, zu dem die Person umzieht.</td>
+</tr>
+</tbody></table>
 <h2 id='ein-bild-zu-einer-person-hochladen'>Ein Bild zu einer Person hochladen</h2>
 <p>Dieser Request läd ein Bild hoch und weist dieses der angegebenen Person zu.</p>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="s1">'https://[SERVER]/api/upload?personId=[ID]'</span>
@@ -2521,9 +2567,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
 <span class="nv">$response</span> <span class="o">=</span> Invoke-RestMethod <span class="s1">'https://[SERVER]/api/upload?personId=[ID]'</span> -Method <span class="s1">'POST'</span> -Headers <span class="nv">$headers</span> -Body <span class="nv">$body</span>
 <span class="nv">$response</span> | ConvertTo-Json
 </code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-12'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-13'>HTTP-Anfrage</h3>
 <p><code>POST https://[SERVER]/api/upload?personId=[ID]</code></p>
-<h3 id='query-parameter-10'>Query-Parameter</h3>
+<h3 id='query-parameter-11'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2569,9 +2615,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-13'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-14'>HTTP-Anfrage</h3>
 <p><code>GET https://[SERVER]/api/person/bestellungen?mandantName=[MANDANTNAME]&amp;datum=[DATUM]</code></p>
-<h3 id='query-parameter-11'>Query-Parameter</h3>
+<h3 id='query-parameter-12'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2721,9 +2767,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-14'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-15'>HTTP-Anfrage</h3>
 <p><code>GET https://[SERVER]/api/person/ohneBestellung?mandantName=[MANDANTNAME]&amp;datum=[DATUM]</code></p>
-<h3 id='query-parameter-12'>Query-Parameter</h3>
+<h3 id='query-parameter-13'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2778,9 +2824,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
   </span><span class="s2">"reihenfolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>201 CREATED
-</code></pre><h3 id='http-anfrage-15'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-16'>HTTP-Anfrage</h3>
 <p><code>POST https://[SERVER]/api/klassenstufe</code></p>
-<h3 id='body-parameter-7'>Body-Parameter</h3>
+<h3 id='body-parameter-8'>Body-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2843,7 +2889,7 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-16'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-17'>HTTP-Anfrage</h3>
 <p><code>GET https://[SERVER]/api/klassenstufen</code></p>
 <h3 id='body-antwort-12'>Body-Antwort</h3>
 <table><thead>
@@ -2873,9 +2919,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
   </span><span class="s2">"reihenfolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-17'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-18'>HTTP-Anfrage</h3>
 <p><code>GET https://[SERVER]/api/klassenstufe/[ID]</code></p>
-<h3 id='query-parameter-13'>Query-Parameter</h3>
+<h3 id='query-parameter-14'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2914,9 +2960,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
   </span><span class="s2">"reihenfolge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>204 NO CONTENT
-</code></pre><h3 id='http-anfrage-18'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-19'>HTTP-Anfrage</h3>
 <p><code>PUT https://[SERVER]/api/klassenstufe</code></p>
-<h3 id='body-parameter-8'>Body-Parameter</h3>
+<h3 id='body-parameter-9'>Body-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2950,9 +2996,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
   --request DELETE
   --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
 </code></pre><pre class="highlight html tab-html"><code>204 NO CONTENT
-</code></pre><h3 id='http-anfrage-19'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-20'>HTTP-Anfrage</h3>
 <p><code>DELETE https://[SERVER]/api/klassenstufe/[ID]</code></p>
-<h3 id='query-parameter-14'>Query-Parameter</h3>
+<h3 id='query-parameter-15'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2987,9 +3033,9 @@ Ansonsten wird die Person zum heutigen Datum inaktiv gesetzt.
   </span><span class="s2">"klassenstufeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>201 CREATED
-</code></pre><h3 id='http-anfrage-20'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-21'>HTTP-Anfrage</h3>
 <p><code>POST https://[SERVER]/api/klasse</code></p>
-<h3 id='body-parameter-9'>Body-Parameter</h3>
+<h3 id='body-parameter-10'>Body-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3076,7 +3122,7 @@ Ein weiterer Endpunkt ruft eine bestimmte Klasse ab.</p>
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-21'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-22'>HTTP-Anfrage</h3>
 <p><code>GET https://[SERVER]/api/klassen</code></p>
 <h3 id='body-antwort-15'>Body-Antwort</h3>
 <table><thead>
@@ -3108,9 +3154,9 @@ Ein weiterer Endpunkt ruft eine bestimmte Klasse ab.</p>
   </span><span class="s2">"klassensufeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-22'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-23'>HTTP-Anfrage</h3>
 <p><code>GET https://[SERVER]/api/klasse/[ID]</code></p>
-<h3 id='query-parameter-15'>Query-Parameter</h3>
+<h3 id='query-parameter-16'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3141,9 +3187,9 @@ Ein weiterer Endpunkt ruft eine bestimmte Klasse ab.</p>
   </span><span class="s2">"klassenstufeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>204 NO CONTENT
-</code></pre><h3 id='http-anfrage-23'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-24'>HTTP-Anfrage</h3>
 <p><code>PUT https://[SERVER]/api/klasse</code></p>
-<h3 id='body-parameter-10'>Body-Parameter</h3>
+<h3 id='body-parameter-11'>Body-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3189,9 +3235,9 @@ Ein weiterer Endpunkt ruft eine bestimmte Klasse ab.</p>
   --request DELETE
   --header <span class="s2">"Authorization: Bearer [API-KEY]"</span>
 </code></pre><pre class="highlight html tab-html"><code>204 NO CONTENT
-</code></pre><h3 id='http-anfrage-24'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-25'>HTTP-Anfrage</h3>
 <p><code>DELETE https://[SERVER]/api/klasse/[ID]</code></p>
-<h3 id='query-parameter-16'>Query-Parameter</h3>
+<h3 id='query-parameter-17'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3235,9 +3281,9 @@ Ein weiterer Endpunkt ruft eine bestimmte Klasse ab.</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-25'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-26'>HTTP-Anfrage</h3>
 <p><code>POST https://[SERVER]/api/identifikation?mandantName=[MANDANTNAME]</code></p>
-<h3 id='query-parameter-17'>Query-Parameter</h3>
+<h3 id='query-parameter-18'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3251,7 +3297,7 @@ Ein weiterer Endpunkt ruft eine bestimmte Klasse ab.</p>
 <td>Einschränkung der Personen, die diesem Mandanten zugeordnet sind.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameter-11'>Body-Parameter</h3>
+<h3 id='body-parameter-12'>Body-Parameter</h3>
 <p>array of <a href="#identifikation-2">Identifikation</a></p>
 <h3 id='identifikation-2'>Identifikation</h3>
 <table><thead>
@@ -3332,9 +3378,9 @@ Dieses wird zu dem jetzigen Zeitpunkt zurückgegeben.</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><pre class="highlight html tab-html"><code>200 OK
-</code></pre><h3 id='http-anfrage-26'>HTTP-Anfrage</h3>
+</code></pre><h3 id='http-anfrage-27'>HTTP-Anfrage</h3>
 <p><code>POST https://[SERVER]/api/identifikation?mandantName=[MANDANTNAME]</code></p>
-<h3 id='query-parameter-18'>Query-Parameter</h3>
+<h3 id='query-parameter-19'>Query-Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3348,7 +3394,7 @@ Dieses wird zu dem jetzigen Zeitpunkt zurückgegeben.</p>
 <td>Einschränkung der Personen, die diesem Mandanten zugeordnet sind.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameter-12'>Body-Parameter</h3>
+<h3 id='body-parameter-13'>Body-Parameter</h3>
 <p>array of <a href="#identifikation-2">Identifikation</a></p>
 <h1 id='server-fehler-antworten'>Server Fehler Antworten</h1>
 <table><thead>
