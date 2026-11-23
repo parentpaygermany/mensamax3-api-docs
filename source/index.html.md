@@ -1509,6 +1509,34 @@ curl "https://[SERVER]/api/person/[ID]"
 | --------- | :----------: | ---------------------------------------- |
 | id        |   &#x2611;   | ID der Person, die gelöscht werden soll. |
 
+## Person umziehen
+
+Über diesen Endpunkt kann eine Person umgezogen werden.
+
+```shell
+curl "https://[SERVER]/api/person/umzug?mandantName=[MANDANTNAME]"
+  --request POST
+  --header "Authorization: Bearer [API-KEY]"
+```
+
+### HTTP-Anfrage
+
+`POST https://[SERVER]/api/person/umzug?mandantName=[MANDANTNAME]`
+
+### Query-Parameter
+
+| Parameter   | Erforderlich | Beschreibung                                                        |
+| ----------- | :----------: | ------------------------------------------------------------------- |
+| mandantName |   &#x2611;   | Mandantname, für den die Person ein Umzug durchgeführt werden soll. |
+
+### Body-Parameter
+
+| Parameter   | Erforderlich | Datentyp | Beschreibung                                           |
+| ----------- | :----------: | -------- | ------------------------------------------------------ |
+| personId    |   &#x2611;   | number   | ID der Person.                                         |
+| newMandant  |   &#x2611;   | string   | Name des neuen Mandant, zu dem die Person umzieht.     |
+
+
 ## Ein Bild zu einer Person hochladen
 
 Dieser Request läd ein Bild hoch und weist dieses der angegebenen Person zu.
